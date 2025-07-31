@@ -128,7 +128,7 @@ export default function ContentSection() {
         </div>
         <div
           ref={movilRef}
-          className="-mt-12 -ml-[40%] p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
+          className="-mt-12 md:-ml-[40%] p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
         >
           <AppScreenshot>
             <img
