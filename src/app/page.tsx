@@ -4,7 +4,8 @@ import Header from "@/sections/header";
 import HeroSection from "@/sections/hero";
 import PricingSection from "@/sections/pricing";
 import ContactUsSection from "@/sections/contact-us";
-import Banner from "@/components/banner/banner";
+import ContentSection from "@/sections/content";
+import Footer from "@/sections/footer";
 
 export default function Home() {
   return (
@@ -12,9 +13,11 @@ export default function Home() {
       <Header />
       <HeroSection />
       <BackofficeFeaturesSection />
+      <ContentSection />
       <CallToActionSection />
       <PricingSection />
       <ContactUsSection />
+      <Footer />
     </>
   );
 }

@@ -1,7 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { BackgroundPattern, AppScreenshot } from "@/components/icons";
-import { Heading } from "@/components/typography/heading";
-import { Text } from "@/components/typography/text";
 
 export default function HeroSection() {
   return (
@@ -28,7 +26,7 @@ export default function HeroSection() {
                   ¿Quieres una demo?
                 </span>
                 <span aria-hidden="true" className="h-4 w-px bg-gray-900/10" />
-                <a href="#" className="flex items-center gap-x-1">
+                <a href="#contact-us" className="flex items-center gap-x-1">
                   <span aria-hidden="true" className="absolute inset-0" />
                   Contacta con nosotros
                   <ChevronRightIcon
@@ -39,7 +37,9 @@ export default function HeroSection() {
               </div>
             </div>
             <h1 className="mt-10  text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-              La CARTA DIGITAL QR diferencial
+              La <br />
+              CARTA DIGITAL QR <br />
+              diferencial
             </h1>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
               Con esta carta digital, su restaurante podrá ofrecer la mejor
@@ -48,7 +48,7 @@ export default function HeroSection() {
             </p>
             <div className="mt-10 flex items-center gap-x-6">
               <a
-                href="#"
+                href="#contact-us"
                 className="rounded-md hover:scale-105 transition-all duration-300 bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-teal-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
               >
                 Contacta con nosotros
@@ -63,7 +63,9 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow">
-            <AppScreenshot />
+            <AppScreenshot>
+              <video autoPlay loop muted src="/preview/preview.mp4" />
+            </AppScreenshot>
           </div>
         </div>
       </div>

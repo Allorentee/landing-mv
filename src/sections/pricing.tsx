@@ -1,4 +1,3 @@
-import { Text } from "@/components/typography/text";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 
@@ -6,7 +5,7 @@ const tiers = [
   {
     name: "Básico",
     id: "tier-basico",
-    href: "#",
+    href: "#contact-us",
     priceMonthly: "8,99€",
     free: true,
     description:
@@ -24,7 +23,7 @@ const tiers = [
   {
     name: "Profesional",
     id: "tier-profesional",
-    href: "#",
+    href: "#contact-us",
     priceMonthly: "19,99€",
     free: true,
     description:

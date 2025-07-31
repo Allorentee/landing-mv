@@ -52,7 +52,7 @@ export default function BackofficeFeaturesSection() {
                         className="absolute top-1 left-1 size-5 text-teal-600"
                       />
                       {feature.name}
-                    </dt>{" "}
+                    </dt>
                     <dd className="inline">{feature.description}</dd>
                   </div>
                 ))}

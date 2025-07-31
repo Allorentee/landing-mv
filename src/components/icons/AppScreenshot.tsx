@@ -1,4 +1,4 @@
-export function AppScreenshot() {
+export function AppScreenshot({ children }: { children: React.ReactNode }) {
   return (
     <svg
       role="img"
@@ -25,7 +25,7 @@ export function AppScreenshot() {
         clipPath="url(#2ade4387-9c63-4fc4-b754-10e687a0d332)"
         transform="translate(24 24)"
       >
-        <video autoPlay loop muted src="/preview/preview.mp4" />
+        {children}
       </foreignObject>
     </svg>
   );

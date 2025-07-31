@@ -46,7 +46,7 @@ export default function CallToActionSection() {
               </ul>
               <div className="mt-10 flex">
                 <a
-                  href="mailto:info@menuvision.es"
+                  href="#contact-us"
                   className="text-sm/6 font-semibold text-teal-400 hover:text-teal-300"
                 >
                   Contacta con nosotros

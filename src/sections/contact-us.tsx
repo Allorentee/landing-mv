@@ -1,12 +1,39 @@
+"use client";
 import {
   BuildingOffice2Icon,
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
+import { useState } from "react";
+import { usePostTicket } from "@/api/use-post-ticket";
 
 export default function ContactUsSection() {
+  const { postTicket, isLoading } = usePostTicket();
+  const [formData, setFormData] = useState({
+    source: "LANDING",
+    name: "",
+    surname: "",
+    email: "",
+    message: "",
+    subject: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await postTicket(formData);
+    if (response) {
+      console.log(response);
+    }
+  };
+
   return (
-    <div className="relative isolate bg-white">
+    <div className="relative isolate bg-white" id="contact-us">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
@@ -80,43 +107,44 @@ export default function ContactUsSection() {
           </div>
         </div>
         <form
-          action="#"
-          method="POST"
+          onSubmit={handleSubmit}
           className="px-6 pt-20 pb-24 sm:pb-32 lg:px-8 lg:py-48"
         >
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
                 <label
-                  htmlFor="first-name"
+                  htmlFor="name"
                   className="block text-sm/6 font-semibold text-gray-900"
                 >
                   Nombre
                 </label>
                 <div className="mt-2.5">
                   <input
-                    id="first-name"
-                    name="first-name"
+                    id="name"
+                    name="name"
                     type="text"
                     autoComplete="given-name"
                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-600"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
               <div>
                 <label
-                  htmlFor="last-name"
+                  htmlFor="surname"
                   className="block text-sm/6 font-semibold text-gray-900"
                 >
                   Apellidos
                 </label>
                 <div className="mt-2.5">
                   <input
-                    id="last-name"
-                    name="last-name"
+                    id="surname"
+                    name="surname"
                     type="text"
                     autoComplete="family-name"
                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-600"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -134,26 +162,28 @@ export default function ContactUsSection() {
                     type="email"
                     autoComplete="email"
                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-600"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
+
               <div className="sm:col-span-2">
                 <label
-                  htmlFor="phone-number"
+                  htmlFor="subject"
                   className="block text-sm/6 font-semibold text-gray-900"
                 >
-                  Teléfono
+                  Asunto
                 </label>
                 <div className="mt-2.5">
                   <input
-                    id="phone-number"
-                    name="phone-number"
-                    type="tel"
-                    autoComplete="tel"
+                    id="subject"
+                    name="subject"
                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-600"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
+
               <div className="sm:col-span-2">
                 <label
                   htmlFor="message"
@@ -168,6 +198,7 @@ export default function ContactUsSection() {
                     rows={4}
                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-600"
                     defaultValue={""}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -175,9 +206,10 @@ export default function ContactUsSection() {
             <div className="mt-8 flex justify-end">
               <button
                 type="submit"
+                disabled={isLoading}
                 className="rounded-md bg-teal-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-teal-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
               >
-                Enviar mensaje
+                {isLoading ? "Enviando..." : "Enviar mensaje"}
               </button>
             </div>
           </div>
