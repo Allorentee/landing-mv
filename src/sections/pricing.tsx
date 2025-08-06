@@ -44,7 +44,7 @@ const tiers = [
 
 export default function PricingSection() {
   return (
-    <div className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <div className="relative isolate  px-6 py-24 sm:py-32 lg:px-8">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl"
@@ -58,7 +58,7 @@ export default function PricingSection() {
         />
       </div>
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-base/7 font-semibold text-teal-600">Precios</h2>
+        <h2 className="text-base/7 font-semibold text-primary">Precios</h2>
         <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
           Elige el plan perfecto para tu restaurante
         </p>
@@ -87,7 +87,7 @@ export default function PricingSection() {
             <h3
               id={tier.id}
               className={clsx(
-                tier.featured ? "text-teal-400" : "text-teal-600",
+                tier.featured ? "text-primary-400" : "text-primary",
                 "text-base/7 font-semibold"
               )}
             >
@@ -136,7 +136,7 @@ export default function PricingSection() {
                   <CheckIcon
                     aria-hidden="true"
                     className={clsx(
-                      tier.featured ? "text-teal-400" : "text-teal-600",
+                      tier.featured ? "text-primary-400" : "text-primary",
                       "h-6 w-5 flex-none"
                     )}
                   />
@@ -149,8 +149,8 @@ export default function PricingSection() {
               aria-describedby={tier.id}
               className={clsx(
                 tier.featured
-                  ? "bg-teal-500 text-white shadow-xs hover:bg-teal-400 focus-visible:outline-teal-500"
-                  : "text-teal-600 inset-ring inset-ring-teal-200 hover:inset-ring-teal-300 focus-visible:outline-teal-600",
+                  ? "bg-primary text-white shadow-xs hover:bg-primary-400 focus-visible:outline-primary"
+                  : "text-primary inset-ring inset-ring-primary-200 hover:inset-ring-primary-300 focus-visible:outline-primary",
                 "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
               )}
             >

@@ -47,7 +47,7 @@ export default function CallToActionSection() {
               <div className="mt-10 flex">
                 <a
                   href="#contact-us"
-                  className="text-sm/6 font-semibold text-teal-400 hover:text-teal-300"
+                  className="text-sm/6 font-semibold text-primary-400 hover:text-primary-300"
                 >
                   Contacta con nosotros
                   <span aria-hidden="true">&rarr;</span>
