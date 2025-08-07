@@ -7,7 +7,6 @@ import ContactUsSection from "@/sections/contact-us";
 import ContentSection from "@/sections/content";
 import Footer from "@/sections/footer";
 import FaqsSection from "@/sections/faqs";
-import Benefits from "@/sections/Benefits";
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
 
       <BackofficeFeaturesSection />
       <ContentSection />
-      <Benefits />
       <CallToActionSection />
       <PricingSection />
       <ContactUsSection />
