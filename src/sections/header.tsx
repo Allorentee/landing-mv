@@ -6,10 +6,12 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Características", href: "#caracteristicas" },
+  { name: "Contenido", href: "#contenido" },
+  { name: "Precios", href: "#precios" },
+  { name: "Contacto", href: "#contacto" },
+  { name: "FAQ", href: "#faq" },
+  { name: "Equipo", href: "#equipo" },
 ];
 
 export default function Header() {

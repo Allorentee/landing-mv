@@ -33,7 +33,7 @@ export default function ContactUsSection() {
   };
 
   return (
-    <div className="relative isolate" id="contact-us">
+    <div className="relative isolate" id="contacto">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
@@ -207,7 +207,7 @@ export default function ContactUsSection() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className="rounded-md bg-primary-dark px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 {isLoading ? "Enviando..." : "Enviar mensaje"}
               </button>

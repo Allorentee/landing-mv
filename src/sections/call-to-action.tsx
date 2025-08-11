@@ -1,4 +1,5 @@
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 const benefits = [
   "Diseño personalizado",
@@ -45,13 +46,13 @@ export default function CallToActionSection() {
                 ))}
               </ul>
               <div className="mt-10 flex">
-                <a
+                <Link
                   href="#contact-us"
-                  className="text-sm/6 font-semibold text-primary-400 hover:text-primary-300"
+                  className="text-sm/6 font-semibold text-primary-dark hover:text-primary-300"
                 >
                   Contacta con nosotros
                   <span aria-hidden="true">&rarr;</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

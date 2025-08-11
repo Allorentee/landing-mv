@@ -1,74 +1,121 @@
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
+import React from "react";
+import { Lock, ClockArrowUp, Sparkles, Cog, ShoppingCart } from "lucide-react";
 
-const features = [
+type Feature = {
+  id: string;
+  title: string;
+  description: string;
+  icon: React.ElementType;
+};
+
+const BACKOFFICE_FEATURES: Feature[] = [
   {
-    name: "Gestión en cualquier momento",
+    id: "gestionar-carta",
+    title: "Gestionar la carta",
     description:
-      "Puedes gestionar los datos de tu carta digital en cualquier momento desde el panel de control, de forma sencilla y rápida.",
-    icon: CloudArrowUpIcon,
+      "Modifique precios, unidades, alérgenos, disponibilidad, sugerencias del chef y muchas más opciones",
+    icon: Lock,
   },
   {
-    name: "Subida de imágenes y vídeos",
+    id: "gestionar-videos",
+    title: "Gestionar los videos",
     description:
-      "Se pueden subir imágenes y vídeos para mostrar tus platos de la mejor manera posible y destacar tu oferta gastronómica.",
-    icon: LockClosedIcon,
+      "Modifique los videos de los platos para que sean más atractivos",
+    icon: Lock,
   },
   {
-    name: "Gestión de filtros y más",
-    description:
-      "Gestiona filtros de alérgenos, preferencias, categorías, platos recomendados y mucho más para personalizar la experiencia de tus clientes.",
-    icon: ServerIcon,
+    id: "gestionar-comentarios",
+    title: "Gestionar los comentarios",
+    description: "Lea los comentarios de los clientes y responda a sus dudas",
+    icon: ClockArrowUp,
+  },
+  {
+    id: "gestionar-sugerencias",
+    title: "Gestionar las sugerencias",
+    description: "Lea las sugerencias de los clientes y responda a sus dudas",
+    icon: Sparkles,
+  },
+  {
+    id: "gestionar-estadisticas",
+    title: "Gestionar las estadísticas",
+    description: "Acceda a las estadísticas de la carta y de los clientes",
+    icon: Cog,
+  },
+  {
+    id: "gestionar-notificaciones",
+    title: "Gestionar las notificaciones",
+    description: "Reciba notificaciones de los clientes y responda a sus dudas",
+    icon: ShoppingCart,
   },
 ];
 
-export default function BackofficeFeaturesSection() {
+function BackofficeFeatureCard({
+  title,
+  description,
+  icon: Icon,
+}: {
+  title: string;
+  description: string;
+  icon: React.ElementType;
+}) {
   return (
-    <div className="overflow-hidden  py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          <div className="lg:pt-4 lg:pr-8">
-            <div className="lg:max-w-lg">
-              <h2 className="text-base/7 font-semibold text-primary">
-                Gestiona tu carta digital
-              </h2>
-              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                Edita tu carta digital en todo momento
-              </p>
-              <p className="mt-6 text-lg/8 text-gray-700">
-                Desde el panel de control puedes modificar tu carta digital,
-                gestionar la visibilidad de los platos, añadir imágenes, vídeos,
-                categorías, filtros y mucho más, de forma fácil y rápida.
-              </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-gray-900">
-                      <feature.icon
-                        aria-hidden="true"
-                        className="absolute top-1 left-1 size-5 text-primary"
-                      />
-                      {feature.name}
-                    </dt>
-                    <dd className="inline"> {feature.description}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
-
-          <img
-            alt="Panel de control de la carta digital"
-            src="/preview/backoffice.webp"
-            width={2432}
-            height={1442}
-            className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:-ml-0"
-          />
-        </div>
+    <div className="flex flex-col items-start gap-4 rounded-lg p-6 bg-primary/30 border border-primary/80">
+      <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary-400/20 text-primary-400">
+        <Icon className="h-6 w-6 text-primary-dark" />
       </div>
+      <dt className="text-lg font-semibold text-white dark:text-black">
+        {title}
+      </dt>
+      <dd className="text-base text-gray-300 dark:text-black">{description}</dd>
     </div>
   );
 }
+
+const BackofficeFeaturesSection: React.FC = () => {
+  return (
+    <section id="caracteristicas" className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl sm:text-center">
+          <h2 className="text-base/7 font-semibold text-primary-400">
+            Todo lo que necesitas para gestionar tu carta
+          </h2>
+          <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl sm:text-balance text-primary-dark">
+            Un panel de gestión para actualizar la carta en tiempo real
+          </p>
+          <p className="mt-6 text-lg/8 text-gray-800">
+            Modifique precios, unidades, alérgenos, disponibilidad, sugerencias
+            del chef y muchas más opciones
+          </p>
+        </div>
+      </div>
+      <div className="relative overflow-hidden pt-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <img
+            src="/images/backoffice-dark.webp"
+            alt="App screenshot"
+            className="mb-[-12%] rounded-xl ring-1 shadow-2xl ring-white/10 object-cover"
+            width={2432}
+            height={1442}
+          />
+          {/* <div className="relative" aria-hidden="true">
+            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t rounded-b-4xl from-gray-200 pt-[7%] "></div>
+          </div> */}
+        </div>
+      </div>
+      <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
+        <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-8">
+          {BACKOFFICE_FEATURES.map((feature) => (
+            <BackofficeFeatureCard
+              key={feature.id}
+              title={feature.title}
+              description={feature.description}
+              icon={feature.icon}
+            />
+          ))}
+        </dl>
+      </div>
+    </section>
+  );
+};
+
+export default BackofficeFeaturesSection;
