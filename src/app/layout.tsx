@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Menuvision",
   description: "Carta digital QR",
+  alternates: {
+    canonical: "https://menuvision.es",
+  },
 };
 
 export default function RootLayout({
