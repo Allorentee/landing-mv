@@ -1,9 +1,17 @@
-export function AppScreenshot({ children }: { children: React.ReactNode }) {
+import clsx from "clsx";
+
+export function AppScreenshot({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <svg
       role="img"
       viewBox="0 0 366 729"
-      className="mx-auto w-91.5 max-w-full drop-shadow-xl"
+      className={clsx("mx-auto w-91.5 max-w-full drop-shadow-xl", className)}
     >
       <title>App screenshot</title>
       <defs>

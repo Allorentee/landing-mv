@@ -1,13 +1,14 @@
-import BackofficeFeaturesSection from "@/sections/backoffice-features";
-import CallToActionSection from "@/sections/call-to-action";
-import Header from "@/sections/header";
-import HeroSection from "@/sections/hero/hero";
-import PricingSection from "@/sections/pricing";
-import ContactUsSection from "@/sections/contact-us";
-import ContentSection from "@/sections/content";
-import Footer from "@/sections/footer";
-import FaqsSection from "@/sections/faqs";
-import TeamSection from "@/sections/team/team";
+import Header from "./sections/header";
+import HeroSection from "./sections/hero/hero";
+import BackofficeFeaturesSection from "./sections/backoffice-features";
+import ContentSection from "./sections/content";
+import CallToActionSection from "./sections/call-to-action";
+import PricingSection from "./sections/pricing";
+import ContactUsSection from "./sections/contact-us";
+import FaqsSection from "./sections/faqs";
+import TeamSection from "./sections/team/team";
+import Footer from "./sections/footer";
+import MenuTypes from "./sections/menu-types/menu-types";
 
 export default function Home() {
   return (
@@ -16,8 +17,11 @@ export default function Home() {
       <HeroSection />
 
       <BackofficeFeaturesSection />
+
+      <MenuTypes />
+
       <ContentSection />
-      <CallToActionSection />
+      {/* <CallToActionSection /> */}
       <PricingSection />
       <ContactUsSection />
       <FaqsSection />

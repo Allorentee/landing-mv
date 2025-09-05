@@ -34,11 +34,147 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
 }
 
 .title {
-  background: linear-gradient(to bottom, #fcd9b8, black);
+  background: linear-gradient(120deg, #fcd9b8 40%, #f4845f 80%, #000 100%);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 2px 16px rgba(244, 132, 95, 0.08);
+}
+
+.muted {
+  color: var(--color-gray-500);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  color: var(--color-foreground);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 0.7em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 4.5rem;
+  background: linear-gradient(90deg, var(--color-primary) 30%, var(--color-accent) 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 4px 32px rgba(244, 132, 95, 0.10);
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, var(--color-secondary) 20%, var(--color-primary) 80%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 2px 16px rgba(247, 178, 103, 0.10);
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 2rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 8px rgba(244, 132, 95, 0.08);
+}
+
+h4 {
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+p, span {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  color: var(--color-foreground);
+  font-weight: 400;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+a {
+  color: var(--color-foreground);
+  font-weight: 400;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+
+
+
+
+@media (max-width: 900px) {
+  h1 { font-size: 3.2rem; }
+  h2 { font-size: 2.2rem; }
+  .title { font-size: 2.5rem; }
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.5rem; }
+  .title { font-size: 1.5rem; }
+}
+
+ @media (prefers-color-scheme: dark) {
+  h1, h2, h3, h4, p, span {
+    color: var(--color-foreground-dark);
+  }
+  h1 {
+    background: linear-gradient(90deg, var(--color-primary-dark), var(--color-accent-dark));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  h2 {
+    background: linear-gradient(90deg, var(--color-secondary-dark), var(--color-primary-dark));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  h3 {
+    color: var(--color-primary);
+  }
+  h4 {
+    color: var(--color-secondary-dark);
+  }
+
+  .muted {
+    color: var(--color-gray-300);
+  }
+
+  a {
+    color: var(--color-foreground-dark);
+    &:hover {
+      color: var(--color-foreground-dark);
+    }
+  }
+} 
+
+
+.glass-effect {
+background: rgba(255, 255, 255, 0);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.8px);
+-webkit-backdrop-filter: blur(6.8px);
+border: 1px solid rgba(255, 255, 255, 0.1);
 }

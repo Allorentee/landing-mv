@@ -4,16 +4,6 @@ import "./globals.css";
 import Background from "@/components/background/background";
 import { GTMProvider } from "@/stores/GTM-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: "Menuvision",
   description: "Carta digital QR",
@@ -29,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-dvh mx-auto w-full`}
-      >
+      <body className={`antialiased relative min-h-dvh mx-auto w-full`}>
         <GTMProvider>
           <Background />
           {children}

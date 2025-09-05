@@ -1,7 +1,12 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 
-export default function RotateCard({ children }: React.PropsWithChildren) {
+type RotateCardProps = {
+  children: React.ReactNode;
+  height: number;
+};
+
+export default function RotateCard({ children, height }: RotateCardProps) {
   const [rotationX, setRotationX] = useState(20);
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -47,7 +52,7 @@ export default function RotateCard({ children }: React.PropsWithChildren) {
   return (
     <div
       ref={elementRef}
-      className="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow h-[1000px] -mb-[150px]"
+      className={`lg:shrink-0 lg:grow h-[${height}px] -mb-[150px]`}
     >
       <div
         className="transition-transform duration-100 ease-out flex items-start justify-center"
