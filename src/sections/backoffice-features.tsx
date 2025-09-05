@@ -1,5 +1,6 @@
-import React from "react";
 import { Lock, ClockArrowUp, Sparkles, Cog, ShoppingCart } from "lucide-react";
+import RotateCard from "@/components/animations/rotate-card";
+import { DesktopMockup } from "@/components/icons/desktop-mockup";
 
 type Feature = {
   id: string;
@@ -49,26 +50,10 @@ const BACKOFFICE_FEATURES: Feature[] = [
   },
 ];
 
-function BackofficeFeatureCard({
-  title,
-  description,
-  icon: Icon,
-}: {
+interface BackofficeFeatureCardProps {
   title: string;
   description: string;
   icon: React.ElementType;
-}) {
-  return (
-    <div className="flex flex-col items-start gap-4 rounded-lg p-6 bg-primary/30 border border-primary/80">
-      <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary-400/20 text-primary-400">
-        <Icon className="h-6 w-6 text-primary-dark" />
-      </div>
-      <dt className="text-lg font-semibold text-white dark:text-black">
-        {title}
-      </dt>
-      <dd className="text-base text-gray-300 dark:text-black">{description}</dd>
-    </div>
-  );
 }
 
 const BackofficeFeaturesSection: React.FC = () => {
@@ -88,19 +73,18 @@ const BackofficeFeaturesSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="relative overflow-hidden pt-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <img
-            src="/images/backoffice-dark.webp"
-            alt="App screenshot"
-            className="mb-[-12%] rounded-xl ring-1 shadow-2xl ring-white/10 object-cover"
-            width={2432}
-            height={1442}
-          />
-          {/* <div className="relative" aria-hidden="true">
-            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t rounded-b-4xl from-gray-200 pt-[7%] "></div>
-          </div> */}
-        </div>
+      <div className="flex gap-10 justify-start items-start h-auto">
+        <RotateCard>
+          <DesktopMockup>
+            <img
+              alt="App screenshot"
+              src="/images/backoffice-dark.webp"
+              width={1200}
+              height={1200}
+              className="rounded-xl ring-1 shadow-2xl ring-white/10 object-cover border-10 border-black/50"
+            />
+          </DesktopMockup>
+        </RotateCard>
       </div>
       <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
         <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-8">
@@ -118,4 +102,21 @@ const BackofficeFeaturesSection: React.FC = () => {
   );
 };
 
+function BackofficeFeatureCard({
+  title,
+  description,
+  icon: Icon,
+}: BackofficeFeatureCardProps) {
+  return (
+    <div className="flex flex-col items-start gap-4 rounded-lg p-6 bg-primary/30 border border-primary/80">
+      <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary-400/20 text-primary-400">
+        <Icon className="h-6 w-6 text-primary-dark" />
+      </div>
+      <dt className="text-lg font-semibold text-white dark:text-black">
+        {title}
+      </dt>
+      <dd className="text-base text-gray-300 dark:text-black">{description}</dd>
+    </div>
+  );
+}
 export default BackofficeFeaturesSection;
