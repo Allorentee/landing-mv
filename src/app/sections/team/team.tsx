@@ -20,7 +20,7 @@ const TEAM_MEMBERS = [
       "Desarrollo de web con amplia experiencia en la construcción de interfaces.",
     avatar: "https://avatars.githubusercontent.com/u/99037086?v=4",
     githubUrl: "https://github.com/Allorentee",
-    linkedinUrl: "www.linkedin.com/in/alvaro-llorente-0a2778150",
+    linkedinUrl: "https://www.linkedin.com/in/alvaro-llorente-0a2778150",
   },
 ];
 
