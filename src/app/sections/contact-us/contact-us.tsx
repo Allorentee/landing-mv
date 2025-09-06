@@ -14,13 +14,14 @@ export default function ContactUsSection() {
   const { postTicket, isLoading } = usePostTicket();
 
   const handleSubmit = async (values: any, resetForm: () => void) => {
-    try {
-      await postTicket(values);
-      toast.success("Ticket enviado correctamente");
-      resetForm();
-    } catch (_error) {
-      toast.error("Error al enviar el ticket");
-    }
+    await postTicket(values)
+      .then(() => {
+        toast.success("Ticket enviado correctamente");
+        resetForm();
+      })
+      .catch(() => {
+        toast.error("Error al enviar el ticket");
+      });
   };
 
   return (
@@ -114,7 +115,6 @@ export default function ContactUsSection() {
           className="px-6 sm:pb-32 lg:px-8 w-full"
         >
           {({ values, handleChange, errors, handleSubmit }) => {
-            console.log(errors);
             return (
               <div className="lg:mr-0 lg:max-w-lg w-full">
                 <div className="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 w-full px-5">
