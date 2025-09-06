@@ -3,16 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Background from "@/components/background/background";
 import { GTMProvider } from "@/stores/GTM-provider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Menuvision",
@@ -29,11 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-dvh mx-auto w-full`}
-      >
+      <body className={`antialiased relative min-h-dvh mx-auto w-full`}>
         <GTMProvider>
           <Background />
+          <Toaster />
           {children}
         </GTMProvider>
       </body>
