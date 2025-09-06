@@ -7,31 +7,31 @@ import {
 } from "@/components/icons";
 
 const navigation = [
-  {
-    name: "Facebook",
-    href: "#",
-    icon: FacebookIcon,
-  },
+  // {
+  //   name: "Facebook",
+  //   href: "#",
+  //   icon: FacebookIcon,
+  // },
   {
     name: "Instagram",
     href: "#",
     icon: InstagramIcon,
   },
-  {
-    name: "X",
-    href: "#",
-    icon: XIcon,
-  },
-  {
-    name: "GitHub",
-    href: "#",
-    icon: GitHubIcon,
-  },
-  {
-    name: "YouTube",
-    href: "#",
-    icon: YouTubeIcon,
-  },
+  // {
+  //   name: "X",
+  //   href: "#",
+  //   icon: XIcon,
+  // },
+  // {
+  //   name: "GitHub",
+  //   href: "#",
+  //   icon: GitHubIcon,
+  // },
+  // {
+  //   name: "YouTube",
+  //   href: "#",
+  //   icon: YouTubeIcon,
+  // },
 ];
 
 export default function Footer() {

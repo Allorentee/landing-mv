@@ -1,6 +1,7 @@
 import { Container } from "@/components/container/container";
 import Shadow from "@/components/shadow/shadow";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
+import Image from "next/image";
 import Link from "next/link";
 
 const benefits = [
@@ -21,8 +22,10 @@ export default function CallToActionSection() {
       <div className="relative isolate grid place-content-center">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-white/3 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
-            <img
-              alt=""
+            <Image
+              alt="Team"
+              width={400}
+              height={400}
               src="/images/team.webp"
               className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
             />

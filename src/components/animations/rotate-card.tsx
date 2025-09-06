@@ -6,7 +6,7 @@ type RotateCardProps = {
   height: number;
 };
 
-export default function RotateCard({ children, height }: RotateCardProps) {
+export default function RotateCard({ children }: RotateCardProps) {
   const [rotationX, setRotationX] = useState(20);
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -52,7 +52,7 @@ export default function RotateCard({ children, height }: RotateCardProps) {
   return (
     <div
       ref={elementRef}
-      className={`lg:shrink-0 lg:grow h-[${height}px] -mb-[150px]`}
+      className={`lg:shrink-0 lg:grow h-[360px] md:h-[800px] -mb-[150px]`}
     >
       <div
         className="transition-transform duration-100 ease-out flex items-start justify-center"

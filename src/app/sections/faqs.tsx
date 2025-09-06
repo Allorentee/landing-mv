@@ -41,7 +41,7 @@ const faqs = [
 
 export default function FaqsSection() {
   return (
-    <Container id="faq">
+    <Container id="faqs">
       <div className="w-full flex flex-col pb-20">
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
           Preguntas frecuentes
@@ -54,18 +54,18 @@ export default function FaqsSection() {
               className="py-6 first:pt-0 last:pb-0"
             >
               <dt>
-                <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900">
-                  <span className="text-base/7 font-semibold">
+                <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900 cursor-pointer">
+                  <span className="text-base/7 font-semibold text-black dark:text-primary!">
                     {faq.question}
                   </span>
                   <span className="ml-6 flex h-7 items-center">
                     <PlusSmallIcon
                       aria-hidden="true"
-                      className="size-6 group-data-open:hidden"
+                      className="size-6 group-data-open:hidden text-black dark:text-primary!"
                     />
                     <MinusSmallIcon
                       aria-hidden="true"
-                      className="size-6 group-not-data-open:hidden"
+                      className="size-6 group-not-data-open:hidden text-black dark:text-primary!"
                     />
                   </span>
                 </DisclosureButton>

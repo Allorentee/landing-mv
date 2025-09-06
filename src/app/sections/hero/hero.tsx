@@ -10,10 +10,9 @@ import { Container } from "@/components/container/container";
 import Shadow from "@/components/shadow/shadow";
 
 export default function HeroSection() {
-  const isMobile = useMediaQuery("(min-width: 768px)");
   return (
-    <section className="relative h-screen isolate pt-14 max-w-7xl mx-auto">
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:py-20">
+    <section className="relative h-auto md:h-screen isolate pt-24 md:pt-28 max-w-7xl mx-auto">
+      <div className="mx-auto max-w-7xl px-6 py-4 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:py-20">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
           <h1 className="text-center md:text-left dark:text-black">
             La carta digital que transforma tu restaurante
@@ -24,35 +23,27 @@ export default function HeroSection() {
             filtros inteligentes para alergias y preferencias.
           </p>
 
-          <div className="mt-10 flex items-center md:justify-start justify-center gap-x-6">
+          <div className="mt-10 flex flex-col md:flex-row items-center md:justify-start justify-center gap-6">
             <Link
               href="#contact-us"
-              className="rounded-md hover:scale-105 transition-all duration-300 bg-primary-dark px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              className="rounded-md text-sm!/6 hover:scale-105 transition-all duration-300 bg-primary-dark px-3.5 py-2.5  font-semibold text-white shadow-xs hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               Solicitar información
             </Link>
             <Link
               target="_blank"
-              href={`https://qr.menuvision.es/${process.env.NEXT_DEMO_QR}`}
+              href={`https://qr.menuvision.es/${process.env.NEXT_PUBLIC_DEMO_QR}`}
               className="text-sm/6 font-semibold text-gray-900"
             >
               Probar DEMO <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
-        <div className="mt-10 lg:shrink-0 lg:grow">
+        <div className="mt-6 md:mt-10 lg:shrink-0 lg:grow">
           <Shadow />
-          {isMobile ? (
-            <AppScreenshot>
-              <video autoPlay loop muted src="/preview/test.webm" />
-            </AppScreenshot>
-          ) : (
-            <RotateCard height={800}>
-              <AppScreenshot>
-                <video autoPlay loop muted src="/preview/test.webm" />
-              </AppScreenshot>
-            </RotateCard>
-          )}
+          <AppScreenshot>
+            <video autoPlay loop muted src="/preview/test.webm" />
+          </AppScreenshot>
         </div>
       </div>
     </section>

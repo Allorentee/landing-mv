@@ -131,7 +131,7 @@ export default function PricingSection() {
                 )}
               >
                 {tier.features.map((feature) => (
-                  <li key={feature} className="flex gap-x-3">
+                  <li key={feature} className="flex gap-x-3 dark:text-gray-300">
                     <CheckIcon
                       aria-hidden="true"
                       className={clsx(
@@ -148,12 +148,12 @@ export default function PricingSection() {
                 aria-describedby={tier.id}
                 className={clsx(
                   tier.featured
-                    ? "bg-primary-dark text-white shadow-xs hover:bg-primary-400 focus-visible:outline-primary"
-                    : "text-primary-dark inset-ring inset-ring-primary-200 hover:inset-ring-primary-300 focus-visible:outline-primary",
+                    ? "bg-primary-dark hover:bg-primary-400 text-white shadow-xs focus-visible:outline-primary"
+                    : "text-primary-dark hover:text-primary-400 inset-ring inset-ring-primary-200 hover:inset-ring-primary-300 focus-visible:outline-primary",
                   "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
                 )}
               >
-                Contacta con nosotros
+                Solicitar información
               </a>
             </div>
           ))}

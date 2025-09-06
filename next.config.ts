@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     // Asegura que el sitemap se genere correctamente
     typedRoutes: true,
   },
+  images: {
+    domains: ["avatars.githubusercontent.com"],
+  },
 };
 
 export default nextConfig;

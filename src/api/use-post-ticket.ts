@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export const usePostTicket = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -10,6 +11,9 @@ export const usePostTicket = () => {
       "https://qr.menuvision.es/api/mv/customer/contact-us",
       {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(data),
       }
     );

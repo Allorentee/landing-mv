@@ -1,5 +1,6 @@
 import React from "react";
 import TeamCard from "./components/team-card";
+import { Container } from "@/components/container/container";
 
 const TEAM_MEMBERS = [
   {
@@ -9,6 +10,8 @@ const TEAM_MEMBERS = [
       "Amplia experiencia en desarrollo de aplicaciones robustas y escalables.",
     avatar: "https://avatars.githubusercontent.com/u/47177543?v=4",
     githubUrl: "https://github.com/PabloDelBarrioArnanz",
+    linkedinUrl:
+      "https://www.linkedin.com/in/pablo-del-barrio-arnanz-06b8a715a/",
   },
   {
     name: "Álvaro Llorente",
@@ -17,6 +20,7 @@ const TEAM_MEMBERS = [
       "Desarrollo de web con amplia experiencia en la construcción de interfaces.",
     avatar: "https://avatars.githubusercontent.com/u/99037086?v=4",
     githubUrl: "https://github.com/Allorentee",
+    linkedinUrl: "https://www.linkedin.com/in/alvaro-llorente-87654321/",
   },
 ];
 
@@ -24,7 +28,7 @@ const TEAM_MEMBERS = [
 
 export default function TeamSection() {
   return (
-    <section id="equipo">
+    <Container id="team">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">
@@ -46,10 +50,11 @@ export default function TeamSection() {
               description={member.description}
               avatar={member.avatar}
               githubUrl={member.githubUrl}
+              linkedinUrl={member.linkedinUrl}
             />
           ))}
         </div>
       </div>
-    </section>
+    </Container>
   );
 }

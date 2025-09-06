@@ -6,6 +6,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Container } from "@/components/container/container";
 import Shadow from "@/components/shadow/shadow";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 type Feature = {
   id: string;
@@ -62,10 +63,11 @@ interface BackofficeFeatureCardProps {
 }
 
 const BackofficeFeaturesSection: React.FC = () => {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <Container id="caracteristicas" className="flex flex-col">
+    <Container id="backoffice" className="flex flex-col">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl sm:text-center">
           <h2 className="text-base/7 font-semibold text-primary-400">
@@ -80,7 +82,7 @@ const BackofficeFeaturesSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <RotateCard height={800}>
+      <RotateCard height={isDesktop ? 800 : 460}>
         {showVideo ? (
           <video
             autoPlay
@@ -115,14 +117,12 @@ const BackofficeFeaturesSection: React.FC = () => {
         <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-8">
           <Shadow />
           {BACKOFFICE_FEATURES.map((feature) => (
-            <>
-              <BackofficeFeatureCard
-                key={feature.id}
-                title={feature.title}
-                description={feature.description}
-                icon={feature.icon}
-              />
-            </>
+            <BackofficeFeatureCard
+              key={feature.id}
+              title={feature.title}
+              description={feature.description}
+              icon={feature.icon}
+            />
           ))}
         </dl>
       </div>
@@ -136,7 +136,7 @@ function BackofficeFeatureCard({
   icon: Icon,
 }: BackofficeFeatureCardProps) {
   return (
-    <div className="flex flex-col items-start gap-4 rounded-lg p-6 border border-primary/90 glass-effect">
+    <div className="flex flex-col hover:scale-[1.025] transition-all duration-300 items-start gap-4 rounded-lg p-6 border border-primary/90 glass-effect">
       <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary-400/20 text-primary-400 shadow-lg shadow-primary/10 backdrop-blur-md">
         <Icon className="h-6 w-6 text-primary-dark" />
       </div>

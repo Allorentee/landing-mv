@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Background from "@/components/background/background";
 import { GTMProvider } from "@/stores/GTM-provider";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Menuvision",
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={`antialiased relative min-h-dvh mx-auto w-full`}>
         <GTMProvider>
           <Background />
+          <Toaster />
           {children}
         </GTMProvider>
       </body>

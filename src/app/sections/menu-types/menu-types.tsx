@@ -1,14 +1,22 @@
 "use client";
 import { Container } from "@/components/container/container";
 import { AppScreenshot } from "@/components/icons";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
+import MenuTypesSlider from "./menu-types-slider";
 
 export default function MenuTypes() {
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
   const [isHovered, setIsHovered] = useState(false);
+
+  if (!isDesktop) {
+    return <MenuTypesSlider />;
+  }
+
   return (
-    <Container className="max-w-full">
+    <Container className="max-w-full" id="menu-styles">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
