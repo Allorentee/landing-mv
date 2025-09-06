@@ -1,17 +1,13 @@
 "use client";
-import { AppScreenshot } from "@/components/icons";
-import { Heading } from "@/components/typography/heading";
-import { Highlight } from "@/components/animations/highlight";
 import ContactUsBadge from "./components/contact-us-badge";
 import Link from "next/link";
-import { useMediaQuery } from "@/hooks/use-media-query";
-import RotateCard from "@/components/animations/rotate-card";
-import { Container } from "@/components/container/container";
 import Shadow from "@/components/shadow/shadow";
+import { IPhoneMockup } from "react-device-mockup";
+import Video from "@/components/video/video";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-auto md:h-screen isolate pt-24 md:pt-28 max-w-7xl mx-auto">
+    <section className="relative isolate z-20 h-auto md:h-screen pt-24 md:pt-28 max-w-7xl mx-auto">
       <div className="mx-auto max-w-7xl px-6 py-4 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:py-20">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
           <h1 className="text-center md:text-left dark:text-black">
@@ -41,9 +37,19 @@ export default function HeroSection() {
         </div>
         <div className="mt-6 md:mt-10 lg:shrink-0 lg:grow">
           <Shadow />
-          <AppScreenshot>
-            <video autoPlay loop muted src="/preview/test.webm" />
-          </AppScreenshot>
+
+          <IPhoneMockup
+            className="flex items-center justify-center"
+            screenWidth={300}
+            screenType={"notch"}
+            statusbarColor={"#000"}
+            hideStatusBar
+            transparentNavBar
+            hideNavBar
+          >
+            <Video src="/preview/test.webm" />
+          </IPhoneMockup>
+          <div>{/*  */}</div>
         </div>
       </div>
     </section>

@@ -21,6 +21,7 @@
     "motion": "^12.23.12",
     "next": "15.4.4",
     "react": "19.1.0",
+    "react-device-mockup": "^1.0.0",
     "react-dom": "19.1.0",
     "react-gtm-module": "^2.0.11",
     "react-hot-toast": "^2.6.0",

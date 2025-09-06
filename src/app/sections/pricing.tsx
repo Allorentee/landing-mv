@@ -49,7 +49,7 @@ export default function PricingSection() {
     <FadeIn>
       <div
         id="precios"
-        className="relative isolate  px-6 py-24 sm:py-32 lg:px-8"
+        className="relative isolate z-20 px-6 py-24 sm:py-32 lg:px-8"
       >
         <div
           aria-hidden="true"

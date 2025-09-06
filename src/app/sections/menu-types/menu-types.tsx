@@ -40,10 +40,24 @@ export default function MenuTypes() {
               isHovered ? "-translate-x-96" : "-translate-x-58 -rotate-15"
             )}
           >
-            <video src="/preview/type/type-basic.mov" autoPlay loop muted />
+            <video
+              src="/preview/type/type-basic.mov"
+              playsInline
+              controls={false}
+              autoPlay
+              loop
+              muted
+            />
           </AppScreenshot>
           <AppScreenshot className="relative z-20">
-            <video src="/preview/type/type-video.mov" autoPlay loop muted />
+            <video
+              src="/preview/type/type-video.mov"
+              playsInline
+              controls={false}
+              autoPlay
+              loop
+              muted
+            />
           </AppScreenshot>
           <AppScreenshot
             className={clsx(

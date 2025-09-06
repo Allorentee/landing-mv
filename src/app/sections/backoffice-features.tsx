@@ -89,6 +89,7 @@ const BackofficeFeaturesSection: React.FC = () => {
             loop
             muted
             controls={false}
+            playsInline
             src="/demo.webm"
             width={1200}
             height={800}

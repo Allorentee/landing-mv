@@ -1,5 +1,8 @@
 import clsx from "clsx";
 
+// Nota: En iOS, los elementos <foreignObject> dentro de SVG pueden no renderizarse correctamente o pueden causar problemas de desalineación, especialmente con contenido como videos o elementos HTML complejos. Esto se debe a que el soporte de SVG foreignObject en Safari/iOS es limitado y a menudo inconsistente. Por eso, el video puede verse "descuadrado" o fuera de lugar en dispositivos móviles iOS.
+// Solución recomendada: Evitar el uso de <foreignObject> para contenido interactivo o multimedia en SVG cuando se requiera compatibilidad con iOS. Alternativamente, renderizar el contenido fuera del SVG y posicionarlo con CSS.
+
 export function AppScreenshot({
   children,
   className,
@@ -7,6 +10,10 @@ export function AppScreenshot({
   children: React.ReactNode;
   className?: string;
 }) {
+  // Detectar si es iOS para mostrar un aviso o renderizar diferente si es necesario
+  // (esto es solo un ejemplo, puedes adaptar la lógica según tu caso)
+  // const isIOS = typeof window !== "undefined" && /iPad|iPhone|iPod/.test(navigator.userAgent);
+
   return (
     <svg
       role="img"
@@ -27,6 +34,10 @@ export function AppScreenshot({
         d="M16 59c0-23.748 19.252-43 43-43h246c23.748 0 43 19.252 43 43v615c0 23.196-18.804 42-42 42H58c-23.196 0-42-18.804-42-42V59Z"
         fill="#343E4E"
       />
+      {/* 
+        ATENCIÓN: El siguiente foreignObject puede causar problemas de renderizado en iOS/Safari.
+        Si el contenido es un video o HTML complejo, considera renderizarlo fuera del SVG.
+      */}
       <foreignObject
         width={316}
         height={684}

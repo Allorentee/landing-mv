@@ -6,6 +6,8 @@ import Slider from "react-slick";
 import { AppScreenshot } from "@/components/icons";
 import Image from "next/image";
 import { Container } from "@/components/container/container";
+import { IPhoneMockup } from "react-device-mockup";
+import Video from "@/components/video/video";
 
 export default function SimpleSlider() {
   const settings = {
@@ -36,18 +38,34 @@ export default function SimpleSlider() {
               Sin fotos, sin videos, solo texto, puedes combinar platos con
               fotos o videos
             </p>
-            <AppScreenshot>
-              <video src="/preview/type/type-basic.mov" autoPlay loop muted />
-            </AppScreenshot>
+            <IPhoneMockup
+              className="flex items-center justify-center"
+              screenWidth={250}
+              screenType={"notch"}
+              statusbarColor={"#000"}
+              hideStatusBar
+              transparentNavBar
+              hideNavBar
+            >
+              <Video src="/preview/type/type-basic.mov" />
+            </IPhoneMockup>
           </div>
           <div className="flex flex-col items-center justify-center gap-10">
             <h4 className="text-center!">Menú Video</h4>
             <p className="text-center! muted mb-4">
               Videos interactivos para cautivar a tus clientes
             </p>
-            <AppScreenshot>
-              <video src="/preview/type/type-video.mov" autoPlay loop muted />
-            </AppScreenshot>
+            <IPhoneMockup
+              className="flex items-center justify-center"
+              screenWidth={250}
+              screenType={"notch"}
+              statusbarColor={"#000"}
+              hideStatusBar
+              transparentNavBar
+              hideNavBar
+            >
+              <Video src="/preview/type/type-video.mov" />
+            </IPhoneMockup>
           </div>
           <div className="flex flex-col items-center justify-center gap-10">
             <h4 className="text-center!">Menú Foto</h4>
@@ -55,14 +73,17 @@ export default function SimpleSlider() {
               Muestra tus platos con imágenes atractivas para cautivar a tus
               clientes
             </p>
-            <AppScreenshot>
-              <Image
-                src="/preview/type/type-photo.png"
-                alt="Menú Básico"
-                width={366}
-                height={729}
-              />
-            </AppScreenshot>
+            <IPhoneMockup
+              className="flex items-center justify-center"
+              screenWidth={250}
+              screenType={"notch"}
+              statusbarColor={"#000"}
+              hideStatusBar
+              transparentNavBar
+              hideNavBar
+            >
+              <Video src="/preview/type/type-photo.png" />
+            </IPhoneMockup>
           </div>
         </Slider>
         <div

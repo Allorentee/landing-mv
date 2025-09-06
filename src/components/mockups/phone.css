@@ -1,0 +1,88 @@
+#phone {
+    margin-top: 70px;
+    margin-left: -300px;
+  }
+  body {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
+  
+  button span {
+      box-sizing: content-box;
+  }
+  
+  #callsesh-header > div {
+      box-shadow: none !important;
+  }
+  
+  #nprogress {
+      .spinner {
+          display: none !important;
+      }
+      .bar {
+          background: #000000 !important;
+          z-index: 999999999;
+      }
+  }
+  
+  .uploadcare--widget__button {
+      cursor: pointer;
+  }
+  
+  .callsesh-error-container > div {
+      height: auto !important;
+  }
+  
+  .device .device-frame {
+      & img {
+          max-width: 100%;
+          -webkit-font-smoothing: antialised;
+          backface-visibility: hidden;
+          transform: translateZ(0);
+          -webkit-font-smoothing: subpixel-antialiased;
+      }
+  }
+  
+  [data-baseweb="drawer"] {
+      z-index: 99999;
+  }
+  
+  .accordion-panel-content {
+      > p {
+          &:first-child {
+              margin-top: 0px;
+          }
+          &:last-child {
+              margin-bottom: 0px;
+          }
+      }
+  }
+  
+  .device .slick-slider {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px !important;
+      mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+      -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+    }
+    
+        .slick-list {
+            width: 100%;
+            flex-grow: 1;
+        }
+    
+        .slick-track > div {
+            display: inline-block !important;
+        }
+    
+        .slick-slide div {
+            outline: 0 !important;
+        }
+    
+        .slick-arrow {
+            display: none !important;
+        }
+  
