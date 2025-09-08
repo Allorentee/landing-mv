@@ -41,7 +41,7 @@ export default function MenuTypes() {
             )}
           >
             <video
-              src="/preview/type/type-basic.mov"
+              src="/preview/type/menu-basic.mp4"
               playsInline
               controls={false}
               autoPlay
@@ -51,7 +51,7 @@ export default function MenuTypes() {
           </AppScreenshot>
           <AppScreenshot className="relative z-20">
             <video
-              src="/preview/type/type-video.mov"
+              src="/preview/type/menu-video.mp4"
               playsInline
               controls={false}
               autoPlay
@@ -65,7 +65,14 @@ export default function MenuTypes() {
               isHovered ? "translate-x-96" : "translate-x-58 rotate-15"
             )}
           >
-            <Image src="/preview/type/type-photo.png" alt="Menú Básico" fill />
+            <video
+              src="/preview/type/menu-image.mp4"
+              playsInline
+              controls={false}
+              autoPlay
+              loop
+              muted
+            />
           </AppScreenshot>
         </div>
 
