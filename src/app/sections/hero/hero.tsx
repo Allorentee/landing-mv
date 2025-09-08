@@ -47,7 +47,7 @@ export default function HeroSection() {
             transparentNavBar
             hideNavBar
           >
-            <Video src="/preview/test.webm" />
+            <Video src="/preview/test.webm" poster="/preview/poster.png" />
           </IPhoneMockup>
           <div>{/*  */}</div>
         </div>
