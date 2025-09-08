@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 
 const navigation = [
@@ -19,7 +18,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header className="relative py-6 px-4 md:py-12 md:px-8 z-50">
       <nav
         aria-label="Global"
         className="flex items-center justify-between p-6 lg:px-8"
@@ -65,7 +64,7 @@ export default function Header() {
             href="https://qr.menuvision.es/backoffice/auth/login"
             className="text-sm/6 font-semibold text-gray-900 dark:text-gray-400 hover:dark:text-gray-200"
           >
-            Acceder al panel de control <span aria-hidden="true">&rarr;</span>
+            Acceder <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
@@ -74,7 +73,7 @@ export default function Header() {
         onClose={setMobileMenuOpen}
         className="lg:hidden"
       >
-        <div className="fixed inset-0 z-50" />
+        <div className="fixed inset-0 z-50 " />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto dark:bg-neutral-900 bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">

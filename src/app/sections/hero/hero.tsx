@@ -7,8 +7,8 @@ import Video from "@/components/video/video";
 
 export default function HeroSection() {
   return (
-    <section className="relative isolate z-20 h-auto md:h-screen pt-24 md:pt-28 max-w-7xl mx-auto">
-      <div className="mx-auto max-w-7xl px-6 py-4 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:py-20">
+    <section className="relative isolate z-20 h-auto md:h-screen px-6 xl:my-8 max-w-5xl xl:max-w-7xl mx-auto">
+      <div className="lg:flex lg:items-center lg:gap-x-10">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
           <h1 className="text-center md:text-left dark:text-black">
             La carta digital que transforma tu restaurante
