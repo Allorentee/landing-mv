@@ -1,10 +1,4 @@
-import {
-  FacebookIcon,
-  InstagramIcon,
-  XIcon,
-  GitHubIcon,
-  YouTubeIcon,
-} from "@/components/icons";
+import { InstagramIcon } from "@/components/icons";
 
 const navigation = [
   // {
@@ -14,7 +8,7 @@ const navigation = [
   // },
   {
     name: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/menuvisionqr",
     icon: InstagramIcon,
   },
   // {
@@ -51,7 +45,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0">
-          &copy; 2024 Your Company, Inc. All rights reserved.
+          &copy; 2025 MenuVision, Inc. All rights reserved.
         </p>
       </div>
     </footer>
