@@ -11,6 +11,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
+import IPhonePhone from "@/components/video/iphone-phone";
+import { Typography } from "@/components/typography/typography";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,9 +116,12 @@ export default function ContentSection() {
             <p className="text-base/7 font-semibold text-primary">
               Optimiza la experiencia de tus clientes
             </p>
-            <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+            <Typography
+              as="h2"
+              className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+            >
               La carta digital más completa y fácil de usar
-            </h1>
+            </Typography>
             <p className="mt-6 text-xl/8 text-gray-700">
               Con nuestra carta digital, tus clientes podrán consultar el menú,
               filtrar por alérgenos y preferencias, y descubrir los platos
@@ -129,15 +134,10 @@ export default function ContentSection() {
           ref={movilRef}
           className="-mt-12  p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
         >
-          <AppScreenshot>
-            <Image
-              src={images[currentIndex].src}
-              alt={images[currentIndex].alt}
-              width={366}
-              height={729}
-              className="transition-all duration-500"
-            />
-          </AppScreenshot>
+          <IPhonePhone
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt}
+          />
         </div>
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="max-w-xl text-base/7 text-gray-600 lg:max-w-lg">

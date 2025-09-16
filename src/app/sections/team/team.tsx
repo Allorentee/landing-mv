@@ -29,7 +29,7 @@ const TEAM_MEMBERS = [
 export default function TeamSection() {
   return (
     <Container id="team">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">
             Nuestro equipo
@@ -41,7 +41,7 @@ export default function TeamSection() {
             algunos de los miembros clave de nuestro equipo:
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-6 lg:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {TEAM_MEMBERS.map((member) => (
             <TeamCard
               key={member.githubUrl}

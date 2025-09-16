@@ -2,46 +2,47 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import { FadeIn } from "@/components/animations/fade-in";
+import { Typography } from "@/components/typography/typography";
 
 const tiers = [
   {
     name: "Básico",
     id: "tier-basico",
     href: "#contact-us",
-    priceMonthly: "8,99€",
+    priceMonthly: "19,99€",
     free: true,
-    description:
-      "Perfecto para restaurantes pequeños que quieren empezar con su carta digital.",
+    description: "Pruebe 2 meses gratis sin compromiso",
     features: [
-      "Hasta 50 platos",
+      "Platos ilimitados",
       "Filtros de alérgenos básicos",
       "Categorías de platos",
-      "Soporte por email",
-      "QR personalizable",
-      "Estadísticas básicas",
+      "Soporte personalizado",
+      "QR personalizable con logo",
+      "Estadísticas básicas de uso",
+      "Gestión de platos",
     ],
     featured: false,
   },
-  {
-    name: "Profesional",
-    id: "tier-profesional",
-    href: "#contact-us",
-    priceMonthly: "19,99€",
-    free: true,
-    description:
-      "Solución completa para restaurantes que buscan la máxima personalización.",
-    features: [
-      "Platos ilimitados",
-      "Filtros avanzados de alérgenos",
-      "Categorías personalizables",
-      "Soporte prioritario 24/7",
-      "QR personalizado con logo",
-      "Estadísticas detalladas",
-      "Gestión de ingredientes",
-      "Modo offline disponible",
-    ],
-    featured: true,
-  },
+  // {
+  //   name: "Profesional",
+  //   id: "tier-profesional",
+  //   href: "#contact-us",
+  //   priceMonthly: "19,99€",
+  //   free: true,
+  //   description:
+  //     "Solución completa para restaurantes que buscan la máxima personalización.",
+  //   features: [
+  //     "Platos ilimitados",
+  //     "Filtros avanzados de alérgenos",
+  //     "Categorías personalizables",
+  //     "Soporte prioritario 24/7",
+  //     "QR personalizado con logo",
+  //     "Estadísticas detalladas",
+  //     "Gestión de ingredientes",
+  //     "Modo offline disponible",
+  //   ],
+  //   featured: true,
+  // },
 ];
 
 export default function PricingSection() {
@@ -68,12 +69,15 @@ export default function PricingSection() {
           Elige el plan perfecto para tu restaurante
         </p>
       </div>
-      <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
+      <Typography
+        as="p"
+        className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8"
+      >
         Elige un plan económico que incluya las mejores características para
         atraer a tu público, crear lealtad de tus clientes y aumentar tus
         ventas.
-      </p>
-      <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
+      </Typography>
+      <div className="mt-16  grid place-content-center">
         {tiers.map((tier, tierIdx) => (
           <div
             key={tier.id}
@@ -87,7 +91,7 @@ export default function PricingSection() {
                 : tierIdx === 0
                 ? "rounded-t-3xl sm:rounded-b-none lg:rounded-bl-3xl"
                 : "sm:rounded-t-none lg:rounded-tr-3xl lg:rounded-bl-none",
-              "rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10"
+              "rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10 max-w-lg"
             )}
           >
             <h3 id={tier.id} className={clsx("text-base/7 font-semibold")}>
@@ -109,11 +113,6 @@ export default function PricingSection() {
             >
               /mes
             </span>
-            {tier.free && (
-              <p className="mt-4 text-base text-gray-500">
-                Prueba de 30 días gratis
-              </p>
-            )}
             <p
               className={clsx(
                 tier.featured ? "text-gray-300" : "text-gray-600",

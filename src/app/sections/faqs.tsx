@@ -1,4 +1,5 @@
 import { Container } from "@/components/container/container";
+import { Typography } from "@/components/typography/typography";
 import {
   Disclosure,
   DisclosureButton,
@@ -43,9 +44,9 @@ export default function FaqsSection() {
   return (
     <Container id="faqs">
       <div className="w-full flex flex-col pb-20">
-        <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+        <Typography as="h2" className="text-center">
           Preguntas frecuentes
-        </h2>
+        </Typography>
         <dl className="mt-16 divide-y divide-gray-900/10">
           {faqs.map((faq) => (
             <Disclosure
@@ -55,7 +56,7 @@ export default function FaqsSection() {
             >
               <dt>
                 <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900 cursor-pointer">
-                  <span className="text-base/7 font-semibold text-black dark:text-primary!">
+                  <span className="text-lg! font-bold! text-black dark:text-primary!">
                     {faq.question}
                   </span>
                   <span className="ml-6 flex h-7 items-center">

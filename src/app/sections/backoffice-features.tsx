@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Container } from "@/components/container/container";
 import Shadow from "@/components/shadow/shadow";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { Typography } from "@/components/typography/typography";
 
 type Feature = {
   id: string;
@@ -70,16 +71,22 @@ const BackofficeFeaturesSection: React.FC = () => {
     <Container id="backoffice" className="flex flex-col">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl sm:text-center">
-          <h2 className="text-base/7 font-semibold text-primary-400">
+          <Typography
+            as="h2"
+            className="text-base/7 font-semibold text-primary-400"
+          >
             Todo lo que necesitas para gestionar tu carta
-          </h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl sm:text-balance">
+          </Typography>
+          <Typography
+            as="p"
+            className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl sm:text-balance"
+          >
             Un panel de gestión para actualizar la carta en tiempo real
-          </p>
-          <p className="my-8 text-lg/8 muted">
+          </Typography>
+          <Typography className="my-8 text-lg/8 muted">
             Modifique precios, unidades, alérgenos, disponibilidad, sugerencias
             del chef y muchas más opciones desde un solo lugar y en tiempo real
-          </p>
+          </Typography>
         </div>
       </div>
       <RotateCard height={isDesktop ? 800 : 460}>
@@ -108,7 +115,9 @@ const BackofficeFeaturesSection: React.FC = () => {
               className="rounded-xl ring-1 shadow-2xl ring-white/10 object-cover border-10 border-black/50"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
-              <h1 className="text-white text-2xl font-bold">Visualizar demo</h1>
+              <Typography as="h1" className="text-white text-2xl font-bold">
+                Visualizar demo
+              </Typography>
             </div>
           </div>
         )}

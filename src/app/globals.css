@@ -40,19 +40,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 0.01em;
   line-height: 1.7;
 }
 
+button {
+  cursor: pointer;
+}
+
 .title {
-  background: linear-gradient(120deg, #fcd9b8 40%, #f4845f 80%, #000 100%);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: #8A4606;
   font-weight: 800;
   line-height: 1;
-  text-shadow: 0 2px 16px rgba(244, 132, 95, 0.08);
+  text-shadow: 0 2px 16px rgba(138, 70, 6, 0.08);
 }
 
 .muted {
@@ -71,35 +72,29 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 4.5rem;
-  background: linear-gradient(90deg, var(--color-primary) 30%, var(--color-accent) 100%);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: #8A4606;
   text-shadow: 0 4px 32px rgba(244, 132, 95, 0.10);
   margin-bottom: 0.5em;
 }
 
 h2 {
   font-size: 3rem;
-  background: linear-gradient(90deg, var(--color-secondary) 20%, var(--color-primary) 80%);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: #8A4606;
   text-shadow: 0 2px 16px rgba(247, 178, 103, 0.10);
   margin-bottom: 0.5em;
 }
 
 h3 {
-  font-size: 2rem;
-  color: var(--color-accent);
+  font-size: 2rem;  
+  color: #8A4606;
   font-weight: 700;
   letter-spacing: -0.01em;
-  text-shadow: 0 1px 8px rgba(244, 132, 95, 0.08);
+  text-shadow: 0 1px 8px rgba(138, 70, 6, 0.08);
 }
 
 h4 {
   font-size: 1.25rem;
-  color: var(--color-secondary);
+  color: #8A4606;
   font-weight: 600;
   letter-spacing: 0.01em;
 }
@@ -109,7 +104,7 @@ p, span {
   color: var(--color-foreground);
   font-weight: 400;
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 0.01em;
 }
 
@@ -117,7 +112,7 @@ a {
   color: var(--color-foreground);
   font-weight: 400;
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 0.01em;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -150,6 +145,21 @@ a {
   h1, h2, h3, h4, p, span {
     color: var(--color-foreground-dark);
   }
+
+  .title {
+    background: linear-gradient(90deg, var(--color-primary-dark), var(--color-accent-dark));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 2px 16px rgba(244, 132, 95, 0.08);
+    -webkit-text-fill-color: transparent;
+    /* Soluciona el corte de letras como la "g" añadiendo un poco de padding inferior y overflow visible */
+    padding-bottom: 0.15em;
+    overflow: visible;
+    font-weight: 800;
+    line-height: 1;
+  }
+
   h1 {
     background: linear-gradient(90deg, var(--color-primary-dark), var(--color-accent-dark));
     color: transparent;
@@ -175,9 +185,6 @@ a {
 
   a {
     color: var(--color-foreground-dark);
-    &:hover {
-      color: var(--color-foreground-dark);
-    }
   }
 } 
 

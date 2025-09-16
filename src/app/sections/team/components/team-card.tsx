@@ -23,7 +23,7 @@ export default function TeamCard({
   console.log(linkedinUrl);
   return (
     <div
-      className={`relative group transition-all duration-300 hover:scale-[1.025] hover:shadow-2xl items-center sm:flex bg-white/80 dark:bg-zinc-900/80 border border-gray-200 dark:border-zinc-700 rounded-2xl shadow-lg overflow-hidden ${className} glass-effect`}
+      className={`relative group transition-all duration-300 items-center sm:flex bg-white/80 dark:bg-zinc-900/80 border border-gray-200 dark:border-zinc-700 rounded-2xl shadow-lg overflow-hidden ${className} glass-effect`}
     >
       <div className="relative flex-shrink-0 w-full sm:w-56 h-full sm:h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/30">
         {/* LinkedIn en la esquina superior izquierda */}
@@ -56,7 +56,7 @@ export default function TeamCard({
           )}
         </div>
         <Image
-          className="w-32 h-32 rounded-full border-4 border-white dark:border-zinc-800 object-cover shadow-lg transition-all duration-300 group-hover:scale-105"
+          className="w-32 h-32 rounded-full border-4 border-white dark:border-zinc-800 object-cover shadow-lg"
           width={128}
           height={128}
           src={avatar}
