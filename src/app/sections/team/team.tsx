@@ -4,7 +4,7 @@ import { Container } from "@/components/container/container";
 
 const TEAM_MEMBERS = [
   {
-    name: "Pablo del barrio",
+    name: "Pablo del Barrio",
     role: "Sofware enginner",
     description:
       "Amplia experiencia en desarrollo de aplicaciones robustas y escalables.",

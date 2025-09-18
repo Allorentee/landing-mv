@@ -3,10 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import React from "react";
 import Slider from "react-slick";
-import { AppScreenshot } from "@/components/icons";
-import Image from "next/image";
 import { Container } from "@/components/container/container";
-import { IPhoneMockup } from "react-device-mockup";
 import Video from "@/components/video/video";
 
 export default function SimpleSlider() {
@@ -38,34 +35,17 @@ export default function SimpleSlider() {
               Sin fotos, sin videos, solo texto, puedes combinar platos con
               fotos o videos
             </p>
-            <IPhoneMockup
-              className="flex items-center justify-center"
-              screenWidth={250}
-              screenType={"notch"}
-              statusbarColor={"#000"}
-              hideStatusBar
-              transparentNavBar
-              hideNavBar
-            >
-              <Video src="/preview/type/type-basic.mov" />
-            </IPhoneMockup>
+
+            <Video src="/preview/type/menu-basic.mov" />
           </div>
           <div className="flex flex-col items-center justify-center gap-10">
             <h4 className="text-center!">Menú Video</h4>
             <p className="text-center! muted mb-4">
-              Videos interactivos para cautivar a tus clientes
+              Muestre sus platos en acción, permitiendo a tus clientes ver la
+              preparación y presentación.
             </p>
-            <IPhoneMockup
-              className="flex items-center justify-center"
-              screenWidth={250}
-              screenType={"notch"}
-              statusbarColor={"#000"}
-              hideStatusBar
-              transparentNavBar
-              hideNavBar
-            >
-              <Video src="/preview/type/type-video.mov" />
-            </IPhoneMockup>
+
+            <Video src="/preview/type/menu-video.mp4" />
           </div>
           <div className="flex flex-col items-center justify-center gap-10">
             <h4 className="text-center!">Menú Foto</h4>
@@ -73,17 +53,8 @@ export default function SimpleSlider() {
               Muestra tus platos con imágenes atractivas para cautivar a tus
               clientes
             </p>
-            <IPhoneMockup
-              className="flex items-center justify-center"
-              screenWidth={250}
-              screenType={"notch"}
-              statusbarColor={"#000"}
-              hideStatusBar
-              transparentNavBar
-              hideNavBar
-            >
-              <Video src="/preview/type/type-photo.png" />
-            </IPhoneMockup>
+
+            <Video src="/preview/type/menu-image.mp4" />
           </div>
         </Slider>
         <div

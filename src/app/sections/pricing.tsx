@@ -49,7 +49,7 @@ export default function PricingSection() {
   return (
     <div
       id="pricing"
-      className="relative isolate z-20 px-6 py-24 sm:py-32 lg:px-8"
+      className="relative isolate z-20 px-4 md:px-0 my-24 md:my-40 scroll-mt-[100px]"
     >
       <div
         aria-hidden="true"

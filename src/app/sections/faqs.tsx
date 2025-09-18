@@ -43,11 +43,11 @@ const faqs = [
 export default function FaqsSection() {
   return (
     <Container id="faqs">
-      <div className="w-full flex flex-col pb-20">
+      <div className="w-full flex flex-col gap-6">
         <Typography as="h2" className="text-center">
           Preguntas frecuentes
         </Typography>
-        <dl className="mt-16 divide-y divide-gray-900/10">
+        <dl className="divide-y divide-gray-900/10">
           {faqs.map((faq) => (
             <Disclosure
               key={faq.question}
@@ -76,7 +76,7 @@ export default function FaqsSection() {
               </DisclosurePanel>
             </Disclosure>
           ))}
-        </dl>{" "}
+        </dl>
       </div>
     </Container>
   );

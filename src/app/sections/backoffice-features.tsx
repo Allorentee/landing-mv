@@ -69,8 +69,8 @@ const BackofficeFeaturesSection: React.FC = () => {
 
   return (
     <Container id="backoffice" className="flex flex-col">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl sm:text-center">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-3xl text-center">
           <Typography
             as="h2"
             className="text-base/7 font-semibold text-primary-400"
@@ -78,7 +78,7 @@ const BackofficeFeaturesSection: React.FC = () => {
             Todo lo que necesitas para gestionar tu carta
           </Typography>
           <Typography
-            as="p"
+            as="h3"
             className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl sm:text-balance"
           >
             Un panel de gestión para actualizar la carta en tiempo real
@@ -98,7 +98,7 @@ const BackofficeFeaturesSection: React.FC = () => {
             controls={false}
             playsInline
             src="/demo.webm"
-            width={1200}
+            width={1280}
             height={800}
             className="rounded-xl ring-1 shadow-2xl ring-white/10 object-cover border-10 border-black/50"
           />
@@ -110,7 +110,7 @@ const BackofficeFeaturesSection: React.FC = () => {
             <Image
               src="/images/backoffice-dark.webp"
               alt="Demo"
-              width={1200}
+              width={1280}
               height={800}
               className="rounded-xl ring-1 shadow-2xl ring-white/10 object-cover border-10 border-black/50"
             />
@@ -123,8 +123,8 @@ const BackofficeFeaturesSection: React.FC = () => {
         )}
       </RotateCard>
 
-      <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
-        <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-8">
+      <div className="mx-auto mt-16 md:mt-32 max-w-7xl">
+        <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-4 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-8">
           <Shadow />
           {BACKOFFICE_FEATURES.map((feature) => (
             <BackofficeFeatureCard
@@ -150,10 +150,12 @@ function BackofficeFeatureCard({
       <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary-400/20 text-primary-400 shadow-lg shadow-primary/10 backdrop-blur-md">
         <Icon className="h-6 w-6 text-primary-dark" />
       </div>
-      <dt className="text-lg font-semibold text-white dark:text-gray-100 drop-shadow">
-        {title}
+      <dt>
+        <Typography as="h3">{title}</Typography>
       </dt>
-      <dd className="text-base text-white dark:text-gray-300">{description}</dd>
+      <dd>
+        <Typography as="p">{description}</Typography>
+      </dd>
     </div>
   );
 }

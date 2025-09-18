@@ -1,7 +1,6 @@
 import Header from "./sections/header";
 import HeroSection from "./sections/hero/hero";
 import BackofficeFeaturesSection from "./sections/backoffice-features";
-import ContentSection from "./sections/content";
 import PricingSection from "./sections/pricing";
 import ContactUsSection from "./sections/contact-us/contact-us";
 import FaqsSection from "./sections/faqs";
@@ -19,7 +18,6 @@ export default function Home() {
 
       <MenuTypes />
 
-      <ContentSection />
       <PricingSection />
       <ContactUsSection />
       <FaqsSection />

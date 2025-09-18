@@ -4,6 +4,7 @@ import { usePostTicket } from "@/api/use-post-ticket";
 import { validations } from "./validations";
 import { Formik } from "formik";
 import { toast } from "react-hot-toast";
+import ContactUsInfo from "./contact-us-info";
 
 export default function ContactUsForm() {
   const { postTicket, isLoading } = usePostTicket();
@@ -38,49 +39,43 @@ export default function ContactUsForm() {
       {({ values, handleChange, errors, handleSubmit }) => {
         return (
           <div className="flex-1 w-full">
-            <div className="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 w-full">
+            <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2 w-full">
               <div>
-                <div className="mt-2.5">
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Nombre"
-                    value={values.name}
-                    data-invalid={errors.name ? "true" : undefined}
-                    autoComplete="given-name"
-                    className="block w-full rounded-md data-invalid:outline-red-500     bg-white  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
-                    onChange={handleChange}
-                  />
-                  {errors.name && (
-                    <span className="text-red-500! text-sm!">
-                      {errors.name}
-                    </span>
-                  )}
-                </div>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Nombre"
+                  value={values.name}
+                  data-invalid={errors.name ? "true" : undefined}
+                  autoComplete="given-name"
+                  className="block w-full rounded-md data-invalid:outline-red-500 bg-white dark:bg-white/90  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                  onChange={handleChange}
+                />
+                {errors.name && (
+                  <span className="text-red-500! text-sm!">{errors.name}</span>
+                )}
               </div>
               <div>
-                <div className="mt-2.5">
-                  <input
-                    id="surname"
-                    name="surname"
-                    type="text"
-                    placeholder="Apellidos"
-                    value={values.surname}
-                    data-invalid={errors.surname ? "true" : undefined}
-                    autoComplete="family-name"
-                    className="block w-full rounded-md data-invalid:outline-red-500 bg-white  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
-                    onChange={handleChange}
-                  />
-                  {errors.surname && (
-                    <span className="text-red-500! text-sm!">
-                      {errors.surname}
-                    </span>
-                  )}
-                </div>
+                <input
+                  id="surname"
+                  name="surname"
+                  type="text"
+                  placeholder="Apellidos"
+                  value={values.surname}
+                  data-invalid={errors.surname ? "true" : undefined}
+                  autoComplete="family-name"
+                  className="block w-full rounded-md data-invalid:outline-red-500 bg-white dark:bg-white/90  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                  onChange={handleChange}
+                />
+                {errors.surname && (
+                  <span className="text-red-500! text-sm!">
+                    {errors.surname}
+                  </span>
+                )}
               </div>
               <div className="sm:col-span-2">
-                <div className="mt-2.5">
+                <div>
                   <input
                     id="email"
                     name="email"
@@ -89,7 +84,7 @@ export default function ContactUsForm() {
                     value={values.email}
                     data-invalid={errors.email ? "true" : undefined}
                     autoComplete="email"
-                    className="block w-full rounded-md data-invalid:outline-red-500 bg-white  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                    className="block w-full rounded-md data-invalid:outline-red-500 bg-white dark:bg-white/90  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                     onChange={handleChange}
                   />
                 </div>
@@ -99,12 +94,12 @@ export default function ContactUsForm() {
               </div>
 
               <div className="sm:col-span-2">
-                <div className="mt-2.5">
+                <div>
                   <input
                     id="subject"
                     name="subject"
                     data-invalid={errors.subject ? "true" : undefined}
-                    className="block w-full rounded-md data-invalid:outline-red-500 bg-white  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                    className="block w-full rounded-md data-invalid:outline-red-500 bg-white dark:bg-white/90  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                     placeholder="Asunto"
                     value={values.subject}
                     onChange={handleChange}
@@ -118,13 +113,13 @@ export default function ContactUsForm() {
               </div>
 
               <div className="sm:col-span-2">
-                <div className="mt-2.5">
+                <div>
                   <textarea
                     id="message"
                     name="message"
                     rows={4}
                     data-invalid={errors.message ? "true" : undefined}
-                    className="block w-full rounded-md data-invalid:outline-red-500 bg-white  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                    className="block w-full rounded-md data-invalid:outline-red-500 bg-white dark:bg-white/90  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                     placeholder="Mensaje"
                     value={values.message}
                     onChange={handleChange}
@@ -137,7 +132,8 @@ export default function ContactUsForm() {
                 )}
               </div>
             </div>
-            <div className="mt-8 flex justify-end">
+            <div className="flex mt-4 justify-between items-center">
+              <ContactUsInfo />
               <button
                 type="submit"
                 onClick={() => handleSubmit()}

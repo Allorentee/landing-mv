@@ -36,7 +36,7 @@ export default function Video({
       style={{
         display: "block",
         boxShadow: "0 8px 32px 0 rgba(255, 255, 255, 0.268)", // Aumenta la opacidad y el spread para que se note más
-        borderRadius: "30px",
+        borderRadius: "25px",
         border: "1px solid #d1d5db",
         background: "#000",
         aspectRatio: "9/19.5",

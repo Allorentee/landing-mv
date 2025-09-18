@@ -25,11 +25,19 @@ export default function MenuTypes() {
             Crea Menús Únicos para tu Restaurante
           </Typography>
           <Typography
-            as="p"
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            as="h3"
+            className="text-xl text-gray-600 max-w-3xl mx-auto mb-6"
           >
             Diseña experiencias gastronómicas memorables con nuestros tres tipos
             de menús digitales
+          </Typography>
+          <Typography
+            as="p"
+            className="text-lg text-gray-600  max-w-2xl mx-auto"
+          >
+            Desde el menú básico perfecto para comenzar, hasta experiencias
+            inmersivas con fotos y videos que cautivarán a tus clientes y
+            aumentarán tus ventas.
           </Typography>
         </div>
 
@@ -55,25 +63,6 @@ export default function MenuTypes() {
               isHovered ? "translate-x-96" : "translate-x-58 rotate-15"
             )}
           />
-        </div>
-
-        <div
-          className={"text-center mt-16 transition-all duration-500 ease-out"}
-        >
-          <Typography
-            as="h3"
-            className="text-2xl font-semibold text-gray-900  mb-4"
-          >
-            Tres Tipos de Menú para Cada Necesidad
-          </Typography>
-          <Typography
-            as="p"
-            className="text-lg text-gray-600  max-w-2xl mx-auto"
-          >
-            Desde el menú básico perfecto para comenzar, hasta experiencias
-            inmersivas con fotos y videos que cautivarán a tus clientes y
-            aumentarán tus ventas.
-          </Typography>
         </div>
       </div>
     </Container>
