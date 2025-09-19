@@ -68,26 +68,24 @@ const BackofficeFeaturesSection: React.FC = () => {
   const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <Container id="backoffice" className="flex flex-col">
-      <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-3xl text-center">
-          <Typography
-            as="h2"
-            className="text-base/7 font-semibold text-primary-400"
-          >
-            Todo lo que necesitas para gestionar tu carta
-          </Typography>
-          <Typography
-            as="h3"
-            className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl sm:text-balance"
-          >
-            Un panel de gestión para actualizar la carta en tiempo real
-          </Typography>
-          <Typography className="my-8 text-lg/8 muted">
-            Modifique precios, unidades, alérgenos, disponibilidad, sugerencias
-            del chef y muchas más opciones desde un solo lugar y en tiempo real
-          </Typography>
-        </div>
+    <Container id="backoffice" className="flex flex-col gap-8">
+      <div className="mx-auto text-center flex flex-col gap-4">
+        <Typography
+          as="h2"
+          className="text-base/7 font-semibold text-primary-400"
+        >
+          Todo lo que necesitas para gestionar tu carta
+        </Typography>
+        <Typography
+          as="h3"
+          className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl sm:text-balance"
+        >
+          Un panel de gestión para actualizar la carta en tiempo real
+        </Typography>
+        <Typography className="text-lg/8 muted">
+          Modifique precios, unidades, alérgenos, disponibilidad, sugerencias
+          del chef y muchas más opciones desde un solo lugar y en tiempo real
+        </Typography>
       </div>
       <RotateCard height={isDesktop ? 800 : 460}>
         {showVideo ? (
@@ -101,6 +99,12 @@ const BackofficeFeaturesSection: React.FC = () => {
             width={1280}
             height={800}
             className="rounded-xl ring-1 shadow-2xl ring-white/10 object-cover border-10 border-black/50"
+            style={{}}
+            ref={(el) => {
+              if (el) {
+                el.playbackRate = 1.5;
+              }
+            }}
           />
         ) : (
           <div
@@ -123,7 +127,7 @@ const BackofficeFeaturesSection: React.FC = () => {
         )}
       </RotateCard>
 
-      <div className="mx-auto mt-16 md:mt-32 max-w-7xl">
+      <div className="mx-auto max-w-7xl">
         <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-4 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-8">
           <Shadow />
           {BACKOFFICE_FEATURES.map((feature) => (
@@ -146,16 +150,12 @@ function BackofficeFeatureCard({
   icon: Icon,
 }: BackofficeFeatureCardProps) {
   return (
-    <div className="flex flex-col hover:scale-[1.025] transition-all duration-300 items-start gap-4 rounded-lg p-6 border border-primary/90 glass-effect">
+    <div className="flex flex-col items-start gap-4 rounded-lg p-6 border border-primary/90 glass-effect">
       <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary-400/20 text-primary-400 shadow-lg shadow-primary/10 backdrop-blur-md">
         <Icon className="h-6 w-6 text-primary-dark" />
       </div>
-      <dt>
-        <Typography as="h3">{title}</Typography>
-      </dt>
-      <dd>
-        <Typography as="p">{description}</Typography>
-      </dd>
+      <Typography as="h3">{title}</Typography>
+      <Typography as="p">{description}</Typography>
     </div>
   );
 }

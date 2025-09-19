@@ -42,42 +42,40 @@ const faqs = [
 
 export default function FaqsSection() {
   return (
-    <Container id="faqs">
-      <div className="w-full flex flex-col gap-6">
-        <Typography as="h2" className="text-center">
-          Preguntas frecuentes
-        </Typography>
-        <dl className="divide-y divide-gray-900/10">
-          {faqs.map((faq) => (
-            <Disclosure
-              key={faq.question}
-              as="div"
-              className="py-6 first:pt-0 last:pb-0"
-            >
-              <dt>
-                <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900 cursor-pointer">
-                  <span className="text-lg! font-bold! text-black dark:text-primary!">
-                    {faq.question}
-                  </span>
-                  <span className="ml-6 flex h-7 items-center">
-                    <PlusSmallIcon
-                      aria-hidden="true"
-                      className="size-6 group-data-open:hidden text-black dark:text-primary!"
-                    />
-                    <MinusSmallIcon
-                      aria-hidden="true"
-                      className="size-6 group-not-data-open:hidden text-black dark:text-primary!"
-                    />
-                  </span>
-                </DisclosureButton>
-              </dt>
-              <DisclosurePanel as="dd" className="mt-2 pr-12">
-                <p className="text-base/7 text-gray-600">{faq.answer}</p>
-              </DisclosurePanel>
-            </Disclosure>
-          ))}
-        </dl>
-      </div>
+    <Container id="faqs" className="flex flex-col gap-8">
+      <Typography as="h2" className="text-center">
+        Preguntas frecuentes
+      </Typography>
+      <dl className="divide-y divide-gray-900/10 w-full">
+        {faqs.map((faq) => (
+          <Disclosure
+            key={faq.question}
+            as="div"
+            className="py-6 first:pt-0 last:pb-0"
+          >
+            <dt>
+              <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900 cursor-pointer">
+                <span className="text-lg! font-bold! text-black dark:text-primary!">
+                  {faq.question}
+                </span>
+                <span className="ml-6 flex h-7 items-center">
+                  <PlusSmallIcon
+                    aria-hidden="true"
+                    className="size-6 group-data-open:hidden text-black dark:text-primary!"
+                  />
+                  <MinusSmallIcon
+                    aria-hidden="true"
+                    className="size-6 group-not-data-open:hidden text-black dark:text-primary!"
+                  />
+                </span>
+              </DisclosureButton>
+            </dt>
+            <DisclosurePanel as="dd" className="mt-2 pr-12">
+              <p className="text-base/7 text-gray-600">{faq.answer}</p>
+            </DisclosurePanel>
+          </Disclosure>
+        ))}
+      </dl>
     </Container>
   );
 }

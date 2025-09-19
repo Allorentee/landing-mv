@@ -1,6 +1,7 @@
 import React from "react";
 import TeamCard from "./components/team-card";
 import { Container } from "@/components/container/container";
+import { Typography } from "@/components/typography/typography";
 
 const TEAM_MEMBERS = [
   {
@@ -28,32 +29,33 @@ const TEAM_MEMBERS = [
 
 export default function TeamSection() {
   return (
-    <Container id="team">
-      <div className="container mx-auto">
-        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">
-            Nuestro equipo
-          </h2>
-          <p className="lg:mb-16 sm:text-xl text-gray-600">
-            Descubre a las personas que hacen este software posible.
-            Profesionales dedicados y apasionados que colaboran estrechamente
-            para ofrecer soluciones innovadoras y de alta calidad. Conoce a
-            algunos de los miembros clave de nuestro equipo:
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {TEAM_MEMBERS.map((member) => (
-            <TeamCard
-              key={member.githubUrl}
-              name={member.name}
-              role={member.role}
-              description={member.description}
-              avatar={member.avatar}
-              githubUrl={member.githubUrl}
-              linkedinUrl={member.linkedinUrl}
-            />
-          ))}
-        </div>
+    <Container id="team" className="flex flex-col gap-8">
+      <div className="mx-auto max-w-screen-sm text-center flex flex-col gap-4">
+        <Typography
+          as="h2"
+          className="text-3xl font-extrabold tracking-tight text-gray-900"
+        >
+          Nuestro equipo
+        </Typography>
+        <Typography as="p" className="sm:text-xl text-gray-600">
+          Descubre a las personas que hacen este software posible. Profesionales
+          dedicados y apasionados que colaboran estrechamente para ofrecer
+          soluciones innovadoras y de alta calidad. Conoce a algunos de los
+          miembros clave de nuestro equipo:
+        </Typography>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {TEAM_MEMBERS.map((member) => (
+          <TeamCard
+            key={member.githubUrl}
+            name={member.name}
+            role={member.role}
+            description={member.description}
+            avatar={member.avatar}
+            githubUrl={member.githubUrl}
+            linkedinUrl={member.linkedinUrl}
+          />
+        ))}
       </div>
     </Container>
   );

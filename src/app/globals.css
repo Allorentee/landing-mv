@@ -42,7 +42,7 @@ button {
 }
 
 .title {
-  color: #8A4606;
+  color: #8a4606;
   font-weight: 800;
   line-height: 1;
   text-shadow: 0 2px 16px rgba(138, 70, 6, 0.08);
@@ -52,7 +52,10 @@ button {
   color: var(--color-gray-500);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   color: var(--color-foreground);
   font-weight: 800;
@@ -63,18 +66,18 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 4.5rem;
-  color: #8A4606;
-  text-shadow: 0 4px 32px rgba(244, 132, 95, 0.10);
+  color: #8a4606;
+  text-shadow: 0 4px 32px rgba(244, 132, 95, 0.1);
 }
 
 h2 {
   font-size: 3rem;
   color: var(--color-primary);
-  text-shadow: 0 2px 16px rgba(247, 178, 103, 0.10);
+  text-shadow: 0 2px 16px rgba(247, 178, 103, 0.1);
 }
 
 h3 {
-  font-size: 0.875rem;  
+  font-size: 1.25rem;
   color: var(--color-foreground);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -83,12 +86,13 @@ h3 {
 
 h4 {
   font-size: 1.25rem;
-  color: #8A4606;
+  color: #8a4606;
   font-weight: 600;
   letter-spacing: 0.01em;
 }
 
-p, span {
+p,
+span {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   color: var(--color-foreground);
   font-weight: 400;
@@ -97,24 +101,31 @@ p, span {
   letter-spacing: 0.01em;
 }
 
-
-
-
-
-
 @media (max-width: 900px) {
-  h1 { font-size: 3.2rem; }
-  h2 { font-size: 2.2rem; }
-  .title { font-size: 2.5rem; }
+  h1 {
+    font-size: 3.2rem;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 600px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.5rem; }
-  .title { font-size: 1.5rem; }
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
 }
 
- @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   html {
     background: var(--color-background-dark);
   }
@@ -122,12 +133,21 @@ p, span {
     background: var(--color-background-dark);
     color: var(--color-foreground-dark);
   }
-  h1, h2, h3, h4, p, span {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span {
     color: var(--color-foreground-dark);
   }
 
   .title {
-    background: linear-gradient(90deg, var(--color-primary-dark), var(--color-accent-dark));
+    background: linear-gradient(
+      90deg,
+      var(--color-primary-dark),
+      var(--color-accent-dark)
+    );
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -141,13 +161,21 @@ p, span {
   }
 
   h1 {
-    background: linear-gradient(90deg, var(--color-primary-dark), var(--color-accent-dark));
+    background: linear-gradient(
+      90deg,
+      var(--color-primary-dark),
+      var(--color-accent-dark)
+    );
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
   }
   h2 {
-    background: linear-gradient(90deg, var(--color-secondary-dark), var(--color-primary-dark));
+    background: linear-gradient(
+      90deg,
+      var(--color-secondary-dark),
+      var(--color-primary-dark)
+    );
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -159,16 +187,13 @@ p, span {
   .muted {
     color: var(--color-gray-300);
   }
-
-
-} 
-
+}
 
 .glass-effect {
-background: rgba(255, 255, 255, 0);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(6.8px);
--webkit-backdrop-filter: blur(6.8px);
-border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

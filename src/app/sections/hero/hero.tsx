@@ -28,10 +28,13 @@ export default function HeroSection() {
         >
           La carta digital que transforma tu restaurante
         </Typography>
-        <p className="text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 text-center md:text-left">
+        <Typography
+          as="p"
+          className="text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 text-center md:text-left"
+        >
           Tus platos, siempre actualizados, accesibles al instante y con filtros
           inteligentes para alergias y preferencias.
-        </p>
+        </Typography>
 
         <div className="flex flex-col md:flex-row items-center md:justify-start justify-center gap-6">
           <Link

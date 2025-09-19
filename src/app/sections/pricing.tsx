@@ -3,6 +3,7 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import { FadeIn } from "@/components/animations/fade-in";
 import { Typography } from "@/components/typography/typography";
+import Shadow from "@/components/shadow/shadow";
 
 const tiers = [
   {
@@ -49,35 +50,29 @@ export default function PricingSection() {
   return (
     <div
       id="pricing"
-      className="relative isolate z-20 px-4 md:px-0 my-24 md:my-40 scroll-mt-[100px]"
+      className="relative isolate z-20 px-4 md:px-0 my-24 md:my-40 scroll-mt-[100px] flex flex-col gap-8"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl"
-      >
-        <div
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-          className="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-        />
-      </div>
-      <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-base/7 font-semibold text-primary">Precios</h2>
-        <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
+      <Shadow />
+      <div className="mx-auto max-w-4xl text-center flex flex-col gap-4">
+        <Typography as="h2" className="text-base/7 font-semibold text-primary">
+          Precios
+        </Typography>
+        <Typography
+          as="h3"
+          className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl"
+        >
           Elige el plan perfecto para tu restaurante
-        </p>
+        </Typography>
+        <Typography
+          as="p"
+          className="mx-auto max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8"
+        >
+          Elige un plan económico que incluya las mejores características para
+          atraer a tu público, crear lealtad de tus clientes y aumentar tus
+          ventas.
+        </Typography>
       </div>
-      <Typography
-        as="p"
-        className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8"
-      >
-        Elige un plan económico que incluya las mejores características para
-        atraer a tu público, crear lealtad de tus clientes y aumentar tus
-        ventas.
-      </Typography>
-      <div className="mt-16  grid place-content-center">
+      <div className="grid place-content-center">
         {tiers.map((tier, tierIdx) => (
           <div
             key={tier.id}

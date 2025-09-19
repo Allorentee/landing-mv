@@ -52,10 +52,10 @@ export default function RotateCard({ children }: RotateCardProps) {
   return (
     <div
       ref={elementRef}
-      className={`lg:shrink-0 lg:grow h-[360px] md:h-[800px] -mb-[150px]`}
+      className={`lg:shrink-0 lg:grow h-auto flex items-start justify-center`}
     >
       <div
-        className="transition-transform duration-100 ease-out flex items-start justify-center"
+        className="transition-transform duration-100 ease-out flex flex-col items-start justify-center"
         style={{
           transform: `perspective(1000px) rotateX(${rotationX}deg) translateZ(0)`,
           transformStyle: "preserve-3d",
