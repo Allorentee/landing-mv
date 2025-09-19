@@ -44,7 +44,7 @@ export default function TeamSection() {
           miembros clave de nuestro equipo:
         </Typography>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {TEAM_MEMBERS.map((member) => (
           <TeamCard
             key={member.githubUrl}

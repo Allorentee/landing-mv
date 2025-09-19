@@ -2,8 +2,13 @@
 
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowRightIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { Typography } from "@/components/typography/typography";
 
 const navigation = [
   { name: "Panel de control", href: "#backoffice" },
@@ -59,9 +64,10 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
             href="https://qr.menuvision.es/backoffice/auth/login"
-            className="text-sm/6 font-semibold text-gray-900 dark:text-gray-400 hover:dark:text-gray-200"
+            className="text-sm/6 font-semibold flex flex-row items-center gap-2 text-gray-900 dark:text-gray-400 hover:dark:text-gray-200"
           >
-            Acceder <span aria-hidden="true">&rarr;</span>
+            Acceder
+            <ArrowRightIcon className="size-4 ml-2" />
           </a>
         </div>
       </nav>

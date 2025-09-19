@@ -127,19 +127,17 @@ const BackofficeFeaturesSection: React.FC = () => {
         )}
       </RotateCard>
 
-      <div className="mx-auto max-w-7xl">
-        <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-4 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-8">
-          <Shadow />
-          {BACKOFFICE_FEATURES.map((feature) => (
-            <BackofficeFeatureCard
-              key={feature.id}
-              title={feature.title}
-              description={feature.description}
-              icon={feature.icon}
-            />
-          ))}
-        </dl>
-      </div>
+      <dl className="mx-auto grid grid-cols-1 gap-x-4 gap-y-4 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-8 w-full">
+        <Shadow />
+        {BACKOFFICE_FEATURES.map((feature) => (
+          <BackofficeFeatureCard
+            key={feature.id}
+            title={feature.title}
+            description={feature.description}
+            icon={feature.icon}
+          />
+        ))}
+      </dl>
     </Container>
   );
 };

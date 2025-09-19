@@ -50,7 +50,7 @@ export default function PricingSection() {
   return (
     <div
       id="pricing"
-      className="relative isolate z-20 px-4 md:px-0 my-24 md:my-40 scroll-mt-[100px] flex flex-col gap-8"
+      className="relative isolate z-20 px-4 lg:px-0 my-24 md:my-40 scroll-mt-[100px] flex flex-col gap-8"
     >
       <Shadow />
       <div className="mx-auto max-w-4xl text-center flex flex-col gap-4">

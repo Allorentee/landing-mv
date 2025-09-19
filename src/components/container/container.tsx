@@ -12,7 +12,7 @@ export function Container({ children, className, id }: ContainerProps) {
       id={id}
       // Clases base para el contenedor principal
       className={clsx(
-        "mx-auto px-4 md:px-0 relative isolate z-20",
+        "mx-auto px-4 lg:px-0 relative isolate z-20",
         // Ancho máximo para diferentes tamaños de pantalla
         "max-w-5xl xl:max-w-7xl",
         // Espaciado vertical y márgenes responsivos

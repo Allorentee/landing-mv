@@ -14,7 +14,7 @@ export default function HeroSection() {
         // Espaciado y tamaño
         "h-auto w-full  md:max-w-7xl",
         // Margenes
-        "px-4 md:px-0 md:mx-auto my-16 md:my-50",
+        "px-4 lg:px-10 xl:px-0 md:mx-auto my-16 md:my-50",
         // Flexbox
         "flex md:flex-row flex-col justify-center items-center",
         // Scroll margin top
