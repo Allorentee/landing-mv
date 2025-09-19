@@ -42,7 +42,6 @@ button {
 }
 
 .title {
-  color: #8a4606;
   font-weight: 800;
   line-height: 1;
   text-shadow: 0 2px 16px rgba(138, 70, 6, 0.08);
@@ -66,13 +65,13 @@ h4 {
 
 h1 {
   font-size: 4.5rem;
-  color: #8a4606;
+  color: var(--color-primary-dark);
   text-shadow: 0 4px 32px rgba(244, 132, 95, 0.1);
 }
 
 h2 {
   font-size: 3rem;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   text-shadow: 0 2px 16px rgba(247, 178, 103, 0.1);
 }
 
@@ -99,6 +98,16 @@ span {
   line-height: 1.8;
   font-size: 1rem;
   letter-spacing: 0.01em;
+}
+
+.phone-mockup {
+  display: block;
+  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.35); /* Sombra más marcada para modo día */
+  border-radius: 25px;
+  border: 1px solid #222; /* Borde más oscuro */
+  aspect-ratio: 9/19.5;
+  max-width: 320px;
+  min-width: 220px;
 }
 
 @media (max-width: 900px) {
@@ -140,6 +149,17 @@ span {
   p,
   span {
     color: var(--color-foreground-dark);
+  }
+
+  .phone-mockup {
+    display: block;
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.268); /* Aumenta la opacidad y el spread para que se note más */
+    border-radius: 25px;
+    border: 1px solid #d1d5db;
+    background: #000;
+    aspect-ratio: 9/19.5;
+    max-width: 320px;
+    min-width: 220px;
   }
 
   .title {

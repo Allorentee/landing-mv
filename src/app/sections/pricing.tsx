@@ -128,7 +128,9 @@ export default function PricingSection() {
                   <CheckIcon
                     aria-hidden="true"
                     className={clsx(
-                      tier.featured ? "text-primary-400" : "text-primary",
+                      tier.featured
+                        ? "text-primary-dark"
+                        : "dark:text-primary text-green-500",
                       "h-6 w-5 flex-none"
                     )}
                   />
