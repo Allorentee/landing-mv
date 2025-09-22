@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Menuvision",
   description: "Carta digital QR",
   alternates: {
-    canonical: "https://menuvision.es",
+    canonical: "https://www.menuvision.es",
   },
 };
 
