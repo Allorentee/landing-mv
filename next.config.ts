@@ -1,13 +1,26 @@
 import type { NextConfig } from "next";
 
+/** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+    ],
+  },
   experimental: {
-    // Asegura que el sitemap se genere correctamente
     typedRoutes: true,
   },
-  images: {
-    domains: ["avatars.githubusercontent.com"],
+  async redirects() {
+    return [
+      {
+        source: "/sitemap.xml",
+        destination: "/sitemap-dinamyc",
+        permanent: true,
+      },
+    ];
   },
 };
 
