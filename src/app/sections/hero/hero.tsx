@@ -14,7 +14,7 @@ export default function HeroSection() {
         // Espaciado y tamaño
         "h-auto w-full  md:max-w-7xl",
         // Margenes
-        "px-4 lg:px-10 xl:px-0 md:mx-auto my-16 md:my-50",
+        "px-4 lg:px-10 xl:px-0 md:mx-auto my-16 md:mb-50 md:mt-40",
         // Flexbox
         "flex md:flex-row flex-col justify-center items-center",
         // Scroll margin top
@@ -38,10 +38,10 @@ export default function HeroSection() {
 
         <div className="flex flex-col md:flex-row items-center md:justify-start justify-center gap-6">
           <Link
-            href="#contact-us"
+            href="https://qr.menuvision.es/backoffice/auth/register"
             className="rounded-md! text-sm/6! transition-transform! duration-300! ease-in-out! bg-primary! text-gray-900! px-8! py-2.5! font-semibold! shadow-xs! hover:scale-105! hover:bg-primary-400! dark:text-black! focus:scale-105! active:scale-100!"
           >
-            Solicitar información
+            ¡Empezar ahora!
           </Link>
           <Link
             target="_blank"
