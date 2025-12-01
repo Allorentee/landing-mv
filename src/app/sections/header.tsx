@@ -29,7 +29,7 @@ export default function Header() {
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Image
-              src="logo2.svg"
+              src="logo.svg"
               className="h-8 w-8"
               width={32}
               height={32}
@@ -82,7 +82,7 @@ export default function Header() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image
-                src="/logo2.svg"
+                src="/logo.svg"
                 className="h-8 w-8"
                 width={32}
                 height={32}
