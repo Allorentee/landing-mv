@@ -39,14 +39,14 @@ export default function HeroSection() {
         <div className="flex flex-col md:flex-row items-center md:justify-start justify-center gap-6">
           <Link
             href="https://qr.menuvision.es/backoffice/auth/register"
-            className="rounded-md! text-sm/6! transition-transform! duration-300! ease-in-out! bg-primary! text-gray-900! px-8! py-2.5! font-semibold! shadow-xs! hover:scale-105! hover:bg-primary-400! dark:text-black! focus:scale-105! active:scale-100!"
+            className="hero-cta-primary"
           >
             ¡Empezar ahora!
           </Link>
           <Link
             target="_blank"
             href={`https://qr.menuvision.es/${process.env.NEXT_PUBLIC_DEMO_QR}`}
-            className="text-sm/6 px-8 font-semibold text-gray-900 dark:text-gray-100 hover:dark:text-primary"
+            className="hero-cta-secondary"
           >
             Probar DEMO <span aria-hidden="true">→</span>
           </Link>

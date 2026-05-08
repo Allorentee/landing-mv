@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="dark" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <body className={`antialiased relative min-h-dvh mx-auto w-full`}>
         <ThemeProvider>
           <GTMProvider>

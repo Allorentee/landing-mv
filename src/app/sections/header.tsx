@@ -66,7 +66,7 @@ export default function Header() {
           <ThemeToggle />
           <a
             href="https://qr.menuvision.es/backoffice/auth/login"
-            className="text-sm/6 flex flex-row items-center gap-2 font-semibold text-foreground/80 transition-colors hover:text-foreground"
+            className="header-access-cta text-sm/6"
           >
             Acceder
             <ArrowRightIcon className="size-4 ml-2" />

@@ -208,3 +208,181 @@ span {
   -webkit-backdrop-filter: blur(6.8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.hero-cta-primary {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  background: #f3c195;
+  color: #111827;
+  padding: 0.65rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+  box-shadow: 0 8px 20px rgba(224, 145, 69, 0.22);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.hero-cta-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -65%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 42%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0.2) 58%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: hero-button-shine 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero-cta-primary:hover,
+.hero-cta-primary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(224, 145, 69, 0.28);
+  background: #efbb8e;
+}
+
+.hero-cta-primary:active {
+  transform: translateY(0);
+}
+
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  border: 1px solid color-mix(in srgb, var(--foreground) 20%, transparent);
+  background: transparent;
+  color: var(--foreground);
+  padding: 0.65rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.hero-cta-secondary:hover,
+.hero-cta-secondary:focus-visible {
+  background: color-mix(in srgb, var(--foreground) 7%, transparent);
+  border-color: color-mix(in srgb, var(--foreground) 28%, transparent);
+}
+
+.dark .hero-cta-primary {
+  color: #111827;
+}
+
+.dark .hero-cta-secondary {
+  color: var(--foreground-dark);
+  border-color: color-mix(in srgb, var(--foreground-dark) 28%, transparent);
+}
+
+.dark .hero-cta-secondary:hover,
+.dark .hero-cta-secondary:focus-visible {
+  background: color-mix(in srgb, var(--foreground-dark) 10%, transparent);
+  border-color: color-mix(in srgb, var(--foreground-dark) 38%, transparent);
+}
+
+@keyframes hero-button-shine {
+  0% {
+    left: -65%;
+  }
+  55% {
+    left: 135%;
+  }
+  100% {
+    left: 135%;
+  }
+}
+
+.header-access-cta {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  border-radius: 0;
+  padding: 0.38rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--foreground) 20%, transparent);
+  color: color-mix(in srgb, var(--foreground) 82%, transparent);
+  background: color-mix(in srgb, var(--foreground) 3%, transparent);
+  font-weight: 700;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.header-access-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 65%
+  );
+  transform: translateX(-150%);
+  animation: header-access-sheen 5.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.header-access-cta:hover,
+.header-access-cta:focus-visible {
+  color: var(--foreground);
+  border-color: color-mix(in srgb, var(--foreground) 30%, transparent);
+  background: color-mix(in srgb, var(--foreground) 8%, transparent);
+}
+
+.header-access-cta svg {
+  transition: transform 0.2s ease;
+}
+
+.header-access-cta:hover svg,
+.header-access-cta:focus-visible svg {
+  transform: translateX(1px);
+}
+
+.dark .header-access-cta {
+  border-color: color-mix(in srgb, var(--foreground-dark) 30%, transparent);
+  color: color-mix(in srgb, var(--foreground-dark) 82%, transparent);
+  background: color-mix(in srgb, var(--foreground-dark) 7%, transparent);
+}
+
+.dark .header-access-cta:hover,
+.dark .header-access-cta:focus-visible {
+  color: var(--foreground-dark);
+  border-color: color-mix(in srgb, var(--foreground-dark) 40%, transparent);
+  background: color-mix(in srgb, var(--foreground-dark) 12%, transparent);
+}
+
+@keyframes header-access-sheen {
+  0% {
+    transform: translateX(-150%);
+  }
+  45% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
