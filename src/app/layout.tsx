@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Background from "@/components/background/background";
 import { GTMProvider } from "@/stores/GTM-provider";
+import { ThemeProvider } from "@/stores/theme-provider";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
@@ -19,13 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className="dark" suppressHydrationWarning>
       <body className={`antialiased relative min-h-dvh mx-auto w-full`}>
-        <GTMProvider>
-          <Background />
-          <Toaster />
-          {children}
-        </GTMProvider>
+        <ThemeProvider>
+          <GTMProvider>
+            <Background />
+            <Toaster />
+            {children}
+          </GTMProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

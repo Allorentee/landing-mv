@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+.dark {
+  --background: #171717;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -102,9 +109,9 @@ span {
 
 .phone-mockup {
   display: block;
-  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.35); /* Sombra más marcada para modo día */
+  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.35);
   border-radius: 25px;
-  border: 1px solid #222; /* Borde más oscuro */
+  border: 1px solid #222;
   aspect-ratio: 9/19.5;
   max-width: 320px;
   min-width: 220px;
@@ -134,26 +141,11 @@ span {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    background: var(--color-background-dark);
-  }
-  body {
-    background: var(--color-background-dark);
-    color: var(--color-foreground-dark);
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  span {
-    color: var(--color-foreground-dark);
-  }
-
+/* Modo noche (dark) */
+.dark {
   .phone-mockup {
     display: block;
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.268); /* Aumenta la opacidad y el spread para que se note más */
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.268);
     border-radius: 25px;
     border: 1px solid #d1d5db;
     background: #000;
@@ -173,7 +165,6 @@ span {
     background-clip: text;
     text-shadow: 0 2px 16px rgba(244, 132, 95, 0.08);
     -webkit-text-fill-color: transparent;
-    /* Soluciona el corte de letras como la "g" añadiendo un poco de padding inferior y overflow visible */
     padding-bottom: 0.15em;
     overflow: visible;
     font-weight: 800;
