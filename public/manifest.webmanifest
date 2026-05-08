@@ -1,0 +1,19 @@
+{
+  "name": "MenuVision — Carta digital con QR para restaurantes",
+  "short_name": "MenuVision",
+  "description": "Carta digital con código QR, alérgenos, filtros y panel de gestión para restaurantes. Los clientes no necesitan descargar app.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#fcd9b8",
+  "lang": "es-ES",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# MenuVision
+
+> Carta digital con código QR para restaurantes. Los comensales escanean el QR y ven el menú en el navegador; no hace falta app. Actualización en tiempo real, alérgenos, filtros por preferencias alimentarias, vídeos de platos y panel de gestión para el local.
+
+Sitio oficial: https://www.menuvision.es/
+
+## Qué ofrece (resumen factual)
+
+- Menú digital accesible vía código QR desde móvil o tablet del cliente.
+- Panel de gestión para editar carta (precios, disponibilidad, alérgenos, sugerencias, etc.).
+- Incluye plan de precios publicado en la propia página (plan Básico y periodo gratuito inicial según texto actual del sitio).
+- Contacto: formulario web y email corporativo enlazados en https://www.menuvision.es/#contact-us
+- Canal social: Instagram @menuvisionqr (https://www.instagram.com/menuvisionqr)
+
+## No inventar datos
+
+Las condiciones económicas y funciones pueden cambiar. Si necesitas información de precios o SLA actuales, consulta primero https://www.menuvision.es/#pricing y los textos del sitio, o contacto directo del restaurante o de MenuVision.

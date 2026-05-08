@@ -1,12 +1,10 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL || "https://www.menuvision.es";
-
   return [
     {
-      url: baseUrl,
+      url: siteUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,

@@ -26,14 +26,15 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/90 p-4 backdrop-blur">
       <nav aria-label="Global" className="flex items-center justify-between">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <a href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">MenuVision — inicio</span>
             <Image
-              src="logo.svg"
+              src="/logo.svg"
               className="h-8 w-8"
               width={32}
               height={32}
-              alt="Logo"
+              alt="MenuVision — carta digital con QR para restaurantes"
+              priority
             />
           </a>
         </div>
@@ -44,7 +45,7 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(true)}
             className="inline-flex items-center justify-center rounded-md text-foreground/80 transition-colors hover:text-foreground"
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">Abrir menú de navegación</span>
             <Bars3Icon
               aria-hidden="true"
               className="size-6"
@@ -81,14 +82,14 @@ export default function Header() {
         <div className="fixed inset-0 z-50 " />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background p-4 sm:max-w-sm sm:ring-1 sm:ring-foreground/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+            <a href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">MenuVision — inicio</span>
               <Image
                 src="/logo.svg"
                 className="h-8 w-8"
                 width={32}
                 height={32}
-                alt="Logo"
+                alt="MenuVision — carta digital con QR para restaurantes"
               />
             </a>
             <button
@@ -96,7 +97,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="-m-2.5 rounded-md p-2.5 text-foreground/80 transition-colors hover:text-foreground"
             >
-              <span className="sr-only">Close menu</span>
+              <span className="sr-only">Cerrar menú</span>
               <XMarkIcon
                 aria-hidden="true"
                 className="size-6"

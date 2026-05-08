@@ -12,16 +12,18 @@ export default function Home() {
   return (
     <>
       <Header />
-      <HeroSection />
+      <main id="contenido-principal">
+        <HeroSection />
 
-      <BackofficeFeaturesSection />
+        <BackofficeFeaturesSection />
 
-      <MenuTypes />
+        <MenuTypes />
 
-      <PricingSection />
-      <ContactUsSection />
-      <FaqsSection />
-      <TeamSection />
+        <PricingSection />
+        <ContactUsSection />
+        <FaqsSection />
+        <TeamSection />
+      </main>
       <Footer />
     </>
   );
