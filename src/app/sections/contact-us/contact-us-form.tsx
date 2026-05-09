@@ -15,9 +15,11 @@ export default function ContactUsForm() {
         toast.success("Ticket enviado correctamente");
         resetForm();
 
-        // 👇 Añade esto
-        if (typeof window !== "undefined" && (window as any).gtag) {
-          (window as any).gtag("event", "formulario_contacto_enviado", {
+        // 👇 Reemplaza el gtag anterior por esto
+        if (typeof window !== "undefined") {
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({
+            event: "formulario_contacto_enviado",
             event_category: "contacto",
             event_label: "landing",
           });
