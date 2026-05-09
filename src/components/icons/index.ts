@@ -5,3 +5,4 @@ export { InstagramIcon } from "./InstagramIcon";
 export { XIcon } from "./XIcon";
 export { GitHubIcon } from "./GitHubIcon";
 export { YouTubeIcon } from "./YouTubeIcon";
+export { WhatsAppIcon } from "./WhatsAppIcon";

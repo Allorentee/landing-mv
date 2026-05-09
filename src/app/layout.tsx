@@ -7,6 +7,7 @@ import { GTMProvider } from "@/stores/GTM-provider";
 import { ThemeProvider } from "@/stores/theme-provider";
 import { absoluteUrl, siteConfig, siteUrl } from "@/lib/site";
 import { Toaster } from "react-hot-toast";
+import { WhatsAppFloat } from "@/components/whatsapp-float/whatsapp-float";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -116,6 +117,7 @@ export default function RootLayout({
             <Background />
             <Toaster />
             {children}
+            <WhatsAppFloat />
           </GTMProvider>
         </ThemeProvider>
       </body>
