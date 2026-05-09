@@ -449,3 +449,31 @@ span {
 .pricing-promo-sheen {
   animation: pricing-promo-sheen 4s cubic-bezier(0.45, 0, 0.2, 1) infinite;
 }
+
+/* Menu types carousel (mobile): one phone slot, slides share the same footprint */
+.menu-types-mobile-slider .slick-list {
+  overflow: hidden;
+}
+
+.menu-types-mobile-slider .slick-track {
+  display: flex !important;
+}
+
+.menu-types-mobile-slider .slick-slide {
+  height: auto;
+  display: flex !important;
+}
+
+.menu-types-mobile-slider .slick-slide > div {
+  display: flex !important;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-types-mobile-slider .menu-types-slide {
+  width: 100%;
+}
+
+.menu-types-mobile-slider .slick-dots {
+  bottom: -2.75rem;
+}

@@ -4,7 +4,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import clsx from "clsx";
 import { useState } from "react";
 import MenuTypesSlider from "./menu-types-slider";
-import Video from "@/components/video/video";
+import { PhoneShowcaseVideo } from "@/components/video/phone-showcase-video";
 import { Typography } from "@/components/typography/typography";
 import { useTranslations } from "next-intl";
 
@@ -36,25 +36,38 @@ export default function MenuTypes() {
         </div>
 
         <div
-          className="flex justify-center items-center relative h-[800px]"
+          className="relative flex h-[800px] items-center justify-center"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <Video
-            src="/preview/type/menu-basic.mp4"
+          <div
             className={clsx(
-              "absolute transition-all duration-500 ease-out z-10",
+              "absolute z-10 transition-all duration-500 ease-out",
               isHovered ? "-translate-x-96" : "-translate-x-58 -rotate-15",
             )}
-          />
-          <Video src="/preview/type/menu-video.mp4" className="relative z-20" />
-          <Video
-            src="/preview/type/menu-image.mp4"
+          >
+            <PhoneShowcaseVideo
+              src="/preview/type/menu-basic.mp4"
+              wrapperClassName="w-[min(240px,20vw)] min-w-[180px]"
+            />
+          </div>
+          <div className="relative z-20">
+            <PhoneShowcaseVideo
+              src="/preview/type/menu-video.mp4"
+              wrapperClassName="w-[min(280px,23vw)] min-w-[200px]"
+            />
+          </div>
+          <div
             className={clsx(
-              "absolute transition-all duration-500 ease-out z-10",
+              "absolute z-10 transition-all duration-500 ease-out",
               isHovered ? "translate-x-96" : "translate-x-58 rotate-15",
             )}
-          />
+          >
+            <PhoneShowcaseVideo
+              src="/preview/type/menu-image.mp4"
+              wrapperClassName="w-[min(240px,20vw)] min-w-[180px]"
+            />
+          </div>
         </div>
       </div>
     </Container>

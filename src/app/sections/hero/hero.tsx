@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Shadow from "@/components/shadow/shadow";
-import Video from "@/components/video/video";
+import { PhoneShowcaseVideo } from "@/components/video/phone-showcase-video";
 import { Typography } from "@/components/typography/typography";
 import clsx from "clsx";
 import { Mail } from "lucide-react";
@@ -61,7 +61,11 @@ export default function HeroSection() {
       </div>
       <div className="mt-6 w-full flex-1 md:mt-10">
         <Shadow />
-        <Video src="/preview/test.webm" poster="/preview/poster.png" />
+        <PhoneShowcaseVideo
+          src="/preview/test.webm"
+          poster="/preview/poster.png"
+          wrapperClassName="mx-auto w-[min(320px,calc(100%-2rem))]"
+        />
       </div>
     </section>
   );
