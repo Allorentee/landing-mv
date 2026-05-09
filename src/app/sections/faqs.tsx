@@ -1,6 +1,6 @@
 import { Container } from "@/components/container/container";
 import { Typography } from "@/components/typography/typography";
-import { faqs } from "@/data/faqs";
+import { getTranslations, getMessages } from "next-intl/server";
 import {
   Disclosure,
   DisclosureButton,
@@ -8,14 +8,21 @@ import {
 } from "@headlessui/react";
 import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
 
-export default function FaqsSection() {
+type FAQModel = { question: string; answer: string };
+
+export default async function FaqsSection() {
+  const t = await getTranslations("Faqs");
+  const messages = await getMessages();
+
+  const items = (messages.Faqs as { items: FAQModel[] }).items ?? [];
+
   return (
     <Container id="faqs" className="flex flex-col gap-8">
       <Typography as="h2" className="text-center">
-        Preguntas frecuentes
+        {t("title")}
       </Typography>
       <dl className="divide-y divide-gray-900/10 w-full">
-        {faqs.map((faq) => (
+        {items.map((faq) => (
           <Disclosure
             key={faq.question}
             as="div"

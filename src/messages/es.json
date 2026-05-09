@@ -1,0 +1,199 @@
+{
+  "Meta": {
+    "title": "MenuVision | Carta digital QR para restaurantes",
+    "description": "MenuVision es una carta digital con código QR para restaurantes en España y Latinoamérica. Actualiza platos en tiempo real, muestra alérgenos, filtros para dietas y vídeos de platos desde un único panel. Sin app para el cliente.",
+    "keywords": [
+      "carta digital",
+      "menú QR",
+      "QR restaurante",
+      "carta QR",
+      "app carta restaurante",
+      "alérgenos menú digital",
+      "menú sin gluten QR",
+      "software hostelería",
+      "carta digital España",
+      "MenuVision"
+    ],
+    "ogImageAlt": "Carta digital MenuVision: menú con QR, alérgenos y vídeos de platos"
+  },
+  "Header": {
+    "brandSr": "MenuVision — inicio",
+    "logoAlt": "MenuVision — carta digital con QR para restaurantes",
+    "openMobileNavSr": "Abrir menú de navegación",
+    "closeMobileNavSr": "Cerrar menú",
+    "nav": {
+      "backoffice": "Panel de control",
+      "menuTypes": "Tipos de menú",
+      "pricing": "Precios",
+      "contact": "Contacto",
+      "faq": "FAQ",
+      "team": "Equipo"
+    },
+    "access": "Acceder",
+    "panelAccessMobile": "Acceso al panel de control",
+    "languageSwitcherSr": "Cambiar idioma"
+  },
+  "Footer": {
+    "rights": "© {year} MenuVision. Todos los derechos reservados."
+  },
+  "Hero": {
+    "title": "La carta digital que transforma tu restaurante",
+    "subtitle": "Tus platos, siempre actualizados, accesibles al instante y con filtros inteligentes para alergias y preferencias.",
+    "ctaStart": "¡Empezar ahora!",
+    "ctaDemo": "¡Solicita tu demo!",
+    "ctaSampleMenu": "Carta de ejemplo"
+  },
+  "BackofficeFeatures": {
+    "eyebrow": "Todo lo que necesitas para gestionar tu carta",
+    "title": "Un panel de gestión para actualizar la carta en tiempo real",
+    "subtitle": "Modifique precios, unidades, alérgenos, disponibilidad, sugerencias del chef y muchas más opciones desde un solo lugar y en tiempo real",
+    "playDemo": "Visualizar demo",
+    "manageMenu": {
+      "title": "Gestionar la carta",
+      "description": "Modifique precios, unidades, alérgenos, disponibilidad, sugerencias del chef y muchas más opciones"
+    },
+    "manageVideos": {
+      "title": "Gestionar los videos",
+      "description": "Modifique los videos de los platos para que sean más atractivos"
+    },
+    "manageComments": {
+      "title": "Gestionar los comentarios",
+      "description": "Lea los comentarios de los clientes y responda a sus dudas"
+    },
+    "manageSuggestions": {
+      "title": "Gestionar las sugerencias",
+      "description": "Lea las sugerencias de los clientes y responda a sus dudas"
+    },
+    "manageStats": {
+      "title": "Gestionar las estadísticas",
+      "description": "Acceda a las estadísticas de la carta y de los clientes"
+    },
+    "manageNotifications": {
+      "title": "Gestionar las notificaciones",
+      "description": "Reciba notificaciones de los clientes y responda a sus dudas"
+    }
+  },
+  "MenuTypesDesktop": {
+    "title": "Crea Menús Únicos para tu Restaurante",
+    "subtitle": "Diseña experiencias gastronómicas memorables con nuestros tres tipos de menús digitales",
+    "body": "Desde el menú básico perfecto para comenzar, hasta experiencias inmersivas con fotos y videos que cautivarán a tus clientes y aumentarán tus ventas."
+  },
+  "MenuTypesSlider": {
+    "title": "Crea Menús Únicos para tu Restaurante",
+    "subtitle": "Diseña experiencias gastronómicas memorables con nuestros tres tipos de menús digitales",
+    "basicTitle": "Menú Básico",
+    "basicDesc": "Sin fotos, sin videos, solo texto, puedes combinar platos con fotos o videos",
+    "videoTitle": "Menú Video",
+    "videoDesc": "Muestre sus platos en acción, permitiendo a tus clientes ver la preparación y presentación.",
+    "imageTitle": "Menú Foto",
+    "imageDesc": "Muestra tus platos con imágenes atractivas para cautivar a tus clientes",
+    "threeTypesTitle": "Tres Tipos de Menú para Cada Necesidad",
+    "threeTypesBody": "Desde el menú básico perfecto para comenzar, hasta experiencias inmersivas con fotos y videos que cautivarán a tus clientes y aumentarán tus ventas."
+  },
+  "Pricing": {
+    "eyebrow": "Precios",
+    "title": "Elige el plan perfecto para tu restaurante",
+    "subtitle": "Elige un plan económico que incluya las mejores características para atraer a tu público, crear lealtad de tus clientes y aumentar tus ventas.",
+    "tierName": "Básico",
+    "promoHeading": "¡Hasta 2027 gratis!",
+    "noCommitment": "Sin compromiso",
+    "later": "Luego",
+    "perMonth": "/mes",
+    "description": "6 meses gratis sin compromiso; después, solo 15,99 € al mes.",
+    "requestInfo": "Solicitar información",
+    "features": [
+      "Platos ilimitados",
+      "Filtros de alérgenos básicos",
+      "Categorías de platos",
+      "Soporte personalizado",
+      "QR personalizable con logo",
+      "Estadísticas básicas de uso",
+      "Gestión de platos"
+    ]
+  },
+  "Contact": {
+    "heading": "Contacta con nosotros",
+    "subtitle": "¿Quieres llevar tu restaurante al siguiente nivel con una carta digital QR? Estamos aquí para ayudarte a implementar la mejor solución para tu negocio.",
+    "placeholders": {
+      "name": "Nombre",
+      "surname": "Apellidos",
+      "email": "Correo electrónico",
+      "subject": "Asunto",
+      "message": "Mensaje"
+    },
+    "submit": "Enviar mensaje",
+    "submitting": "Enviando...",
+    "toastOk": "Ticket enviado correctamente",
+    "toastErr": "Error al enviar el ticket",
+    "validation": {
+      "name": "El nombre es obligatorio",
+      "surname": "El apellido es obligatorio",
+      "emailInvalid": "Introduce un correo electrónico válido",
+      "emailRequired": "Introduce un correo electrónico válido",
+      "message": "El mensaje es obligatorio",
+      "subject": "El asunto es obligatorio"
+    }
+  },
+  "Faqs": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Qué es MenuVision?",
+        "answer": "MenuVision es una plataforma digital que permite a los restaurantes mostrar su carta de manera interactiva, moderna y accesible desde cualquier dispositivo mediante un código QR."
+      },
+      {
+        "question": "¿Cómo puedo actualizar mi carta?",
+        "answer": "Puedes actualizar tu carta en tiempo real desde el panel de control. Los cambios se reflejan al instante en todos los dispositivos de tus clientes, sin necesidad de imprimir nada."
+      },
+      {
+        "question": "¿Es necesario instalar alguna aplicación?",
+        "answer": "No, tus clientes solo necesitan escanear el código QR con la cámara de su móvil para acceder a la carta digital. No hace falta descargar ninguna app."
+      },
+      {
+        "question": "¿Puedo destacar platos recomendados o alérgenos?",
+        "answer": "Sí, puedes marcar platos como recomendados y añadir información sobre alérgenos y preferencias alimentarias para que tus clientes filtren fácilmente."
+      },
+      {
+        "question": "¿Qué ventajas tiene respecto a una carta tradicional?",
+        "answer": "La carta digital es más higiénica, siempre está actualizada, permite mostrar imágenes y descripciones, y mejora la experiencia del cliente con filtros y recomendaciones."
+      },
+      {
+        "question": "¿Cómo puedo contratar MenuVision?",
+        "answer": "Contáctanos a través del formulario de la web o por email y te ayudaremos a poner en marcha tu carta digital personalizada en muy poco tiempo."
+      }
+    ]
+  },
+  "Team": {
+    "title": "Nuestro equipo",
+    "intro": "Descubre a las personas que hacen este software posible. Profesionales dedicados y apasionados que colaboran estrechamente para ofrecer soluciones innovadoras y de alta calidad. Conoce a algunos de los miembros clave de nuestro equipo:",
+    "pablo": {
+      "role": "Sofware enginner",
+      "desc": "Amplia experiencia en desarrollo de aplicaciones robustas y escalables."
+    },
+    "alvaro": {
+      "role": "Web Developer",
+      "desc": "Desarrollo de web con amplia experiencia en la construcción de interfaces."
+    }
+  },
+  "StructuredData": {
+    "websiteAbout": "Software de carta digital y menú QR para restaurantes",
+    "softwareOfferDesc": "Plan Básico mensual tras periodo promocional; incluye meses gratis de prueba según condiciones vigentes.",
+    "priceNote": "19.99"
+  },
+  "WhatsAppFloat": {
+    "ariaLabel": "Abrir conversación de WhatsApp con MenuVision"
+  },
+  "NotFoundPage": {
+    "title": "Página no encontrada",
+    "heading": "Ha ocurrido un error",
+    "description": "No hemos podido encontrar la página que esta buscando, puede explorar nuestra página principal haciendo click en el botón de abajo",
+    "home": "Volver a la home"
+  },
+  "Common": {
+    "priceMonthly": "15,99€"
+  },
+  "ThemeToggle": {
+    "ariaToLight": "Cambiar a modo día",
+    "ariaToDark": "Cambiar a modo noche"
+  }
+}

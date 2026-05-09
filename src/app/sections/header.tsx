@@ -9,43 +9,48 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { ThemeToggle } from "@/components/theme-toggle/theme-toggle";
-
-const navigation = [
-  { name: "Panel de control", href: "#backoffice" },
-  { name: "Tipos de menú", href: "#menu-styles" },
-  { name: "Precios", href: "#pricing" },
-  { name: "Contacto", href: "#contact-us" },
-  { name: "FAQ", href: "#faqs" },
-  { name: "Equipo", href: "#team" },
-];
+import { LanguageSwitcher } from "@/components/language-switcher/language-switcher";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function Header() {
+  const t = useTranslations("Header");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navigation = [
+    { name: t("nav.backoffice"), href: "#backoffice" },
+    { name: t("nav.menuTypes"), href: "#menu-styles" },
+    { name: t("nav.pricing"), href: "#pricing" },
+    { name: t("nav.contact"), href: "#contact-us" },
+    { name: t("nav.faq"), href: "#faqs" },
+    { name: t("nav.team"), href: "#team" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/90 p-4 backdrop-blur">
       <nav aria-label="Global" className="flex items-center justify-between">
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">MenuVision — inicio</span>
+          <Link href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">{t("brandSr")}</span>
             <Image
               src="/logo.svg"
               className="h-8 w-8"
               width={32}
               height={32}
-              alt="MenuVision — carta digital con QR para restaurantes"
+              alt={t("logoAlt")}
               priority
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden items-center gap-2">
           <ThemeToggle />
+          <LanguageSwitcher />
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
             className="inline-flex items-center justify-center rounded-md text-foreground/80 transition-colors hover:text-foreground"
           >
-            <span className="sr-only">Abrir menú de navegación</span>
+            <span className="sr-only">{t("openMobileNavSr")}</span>
             <Bars3Icon
               aria-hidden="true"
               className="size-6"
@@ -63,13 +68,14 @@ export default function Header() {
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-2">
           <ThemeToggle />
+          <LanguageSwitcher />
           <a
             href="https://qr.menuvision.es/backoffice/auth/login"
-            className="header-access-cta text-sm/6"
+            className="header-access-cta flex items-center text-sm/6"
           >
-            Acceder
+            {t("access")}
             <ArrowRightIcon className="size-4 ml-2" />
           </a>
         </div>
@@ -82,22 +88,22 @@ export default function Header() {
         <div className="fixed inset-0 z-50 " />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background p-4 sm:max-w-sm sm:ring-1 sm:ring-foreground/10">
           <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">MenuVision — inicio</span>
+            <Link href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">{t("brandSr")}</span>
               <Image
                 src="/logo.svg"
                 className="h-8 w-8"
                 width={32}
                 height={32}
-                alt="MenuVision — carta digital con QR para restaurantes"
+                alt={t("logoAlt")}
               />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
               className="-m-2.5 rounded-md p-2.5 text-foreground/80 transition-colors hover:text-foreground"
             >
-              <span className="sr-only">Cerrar menú</span>
+              <span className="sr-only">{t("closeMobileNavSr")}</span>
               <XMarkIcon
                 aria-hidden="true"
                 className="size-6"
@@ -123,7 +129,7 @@ export default function Header() {
                   href="https://qr.menuvision.es/backoffice/auth/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-foreground transition-colors hover:bg-foreground/8"
                 >
-                  Acceso al panel de control
+                  {t("panelAccessMobile")}
                 </a>
               </div>
             </div>

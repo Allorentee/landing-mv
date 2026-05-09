@@ -1,24 +1,21 @@
 import * as yup from "yup";
 
-export const validations = yup.object().shape({
-  name: yup
-    .string()
-    .min(2, "El nombre es obligatorio")
-    .required("El nombre es obligatorio"),
-  surname: yup
-    .string()
-    .min(2, "El apellido es obligatorio")
-    .required("El apellido es obligatorio"),
-  email: yup
-    .string()
-    .email("Introduce un correo electrónico válido")
-    .required("Introduce un correo electrónico válido"),
-  message: yup
-    .string()
-    .min(10, "El mensaje es obligatorio")
-    .required("El mensaje es obligatorio"),
-  subject: yup
-    .string()
-    .min(3, "El asunto es obligatorio")
-    .required("El asunto es obligatorio"),
-});
+export function makeContactValidationSchema(trans: {
+  name: string;
+  surname: string;
+  emailInvalid: string;
+  emailRequired: string;
+  message: string;
+  subject: string;
+}) {
+  return yup.object().shape({
+    name: yup.string().min(2, trans.name).required(trans.name),
+    surname: yup.string().min(2, trans.surname).required(trans.surname),
+    email: yup
+      .string()
+      .email(trans.emailInvalid)
+      .required(trans.emailRequired),
+    message: yup.string().min(10, trans.message).required(trans.message),
+    subject: yup.string().min(3, trans.subject).required(trans.subject),
+  });
+}

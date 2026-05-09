@@ -1,34 +1,18 @@
 import { InstagramIcon } from "@/components/icons";
+import { getTranslations } from "next-intl/server";
 
 const navigation = [
-  // {
-  //   name: "Facebook",
-  //   href: "#",
-  //   icon: FacebookIcon,
-  // },
   {
     name: "Instagram",
     href: "https://www.instagram.com/menuvisionqr",
     icon: InstagramIcon,
   },
-  // {
-  //   name: "X",
-  //   href: "#",
-  //   icon: XIcon,
-  // },
-  // {
-  //   name: "GitHub",
-  //   href: "#",
-  //   icon: GitHubIcon,
-  // },
-  // {
-  //   name: "YouTube",
-  //   href: "#",
-  //   icon: YouTubeIcon,
-  // },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("Footer");
+  const year = new Date().getFullYear();
+
   return (
     <footer className="relative isolate z-20 flex flex-row items-center justify-between gap-4 p-6 lg:px-0 lg:py-6 lg:max-w-7xl lg:mx-auto">
       <div className="flex justify-center gap-x-6 md:order-2">
@@ -44,7 +28,7 @@ export default function Footer() {
         ))}
       </div>
       <p className="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0">
-        © {new Date().getFullYear()} MenuVision. Todos los derechos reservados.
+        {t("rights", { year })}
       </p>
     </footer>
   );

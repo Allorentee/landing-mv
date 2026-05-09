@@ -5,8 +5,11 @@ import Video from "@/components/video/video";
 import { Typography } from "@/components/typography/typography";
 import clsx from "clsx";
 import { Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
+  const t = useTranslations("Hero");
+
   return (
     <section
       className={clsx(
@@ -27,15 +30,14 @@ export default function HeroSection() {
           as="h1"
           className="text-center md:text-left dark:text-black"
         >
-          La carta digital que transforma tu restaurante
+          {t("title")}
         </Typography>
 
         <Typography
           as="p"
           className="text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 text-center md:text-left"
         >
-          Tus platos, siempre actualizados, accesibles al instante y con filtros
-          inteligentes para alergias y preferencias.
+          {t("subtitle")}
         </Typography>
 
         <div className="flex flex-col md:flex-row items-center md:justify-start justify-center gap-6">
@@ -43,17 +45,17 @@ export default function HeroSection() {
             href="https://qr.menuvision.es/backoffice/auth/register"
             className="hero-cta-primary"
           >
-            ¡Empezar ahora!
+            {t("ctaStart")}
           </Link>
           <Link href="#contact-us" className="hero-contact-badge">
             <Mail size={16} aria-hidden="true" />
-            <span>¡Solicita tu demo!</span>
+            <span>{t("ctaDemo")}</span>
           </Link>
           <Link
             target="_blank"
             href={`https://qr.menuvision.es/${process.env.NEXT_PUBLIC_DEMO_QR}`}
           >
-            Carta de ejemplo <span aria-hidden="true">→</span>
+            {t("ctaSampleMenu")} <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>

@@ -1,0 +1,196 @@
+{
+  "Meta": {
+    "title": "MenuVision | QR digital menus for restaurants",
+    "description": "MenuVision is a QR-powered digital menu for restaurants worldwide. Update dishes in real time, display allergens and dietary filters, and show dish videos—all from one back office. No customer app required.",
+    "keywords": [
+      "digital menu",
+      "QR menu",
+      "restaurant QR",
+      "QR menu Spain",
+      "allergen menu digital",
+      "digital menu hospitality",
+      "MenuVision"
+    ],
+    "ogImageAlt": "MenuVision digital menu: QR menu with allergens and dish videos"
+  },
+  "Header": {
+    "brandSr": "MenuVision — home",
+    "logoAlt": "MenuVision — digital QR menu for restaurants",
+    "openMobileNavSr": "Open navigation menu",
+    "closeMobileNavSr": "Close menu",
+    "nav": {
+      "backoffice": "Dashboard",
+      "menuTypes": "Menu types",
+      "pricing": "Pricing",
+      "contact": "Contact",
+      "faq": "FAQ",
+      "team": "Team"
+    },
+    "access": "Sign in",
+    "panelAccessMobile": "Back office login",
+    "languageSwitcherSr": "Change language"
+  },
+  "Footer": {
+    "rights": "© {year} MenuVision. All rights reserved."
+  },
+  "Hero": {
+    "title": "The digital menu that transforms your restaurant",
+    "subtitle": "Your dishes, always up to date, instantly accessible—with smart filters for allergies and dietary preferences.",
+    "ctaStart": "Get started",
+    "ctaDemo": "Request a demo",
+    "ctaSampleMenu": "Sample menu"
+  },
+  "BackofficeFeatures": {
+    "eyebrow": "Everything you need to manage your menu",
+    "title": "A control panel to update your menu in real time",
+    "subtitle": "Change prices, units, allergens, availability, chef’s picks and more—from one place, in real time.",
+    "playDemo": "Play demo",
+    "manageMenu": {
+      "title": "Manage the menu",
+      "description": "Change prices, units, allergens, availability, chef suggestions and much more."
+    },
+    "manageVideos": {
+      "title": "Manage videos",
+      "description": "Update dish videos so they stay eye-catching."
+    },
+    "manageComments": {
+      "title": "Manage comments",
+      "description": "Read customer feedback and reply to questions."
+    },
+    "manageSuggestions": {
+      "title": "Manage suggestions",
+      "description": "Read customer suggestions and follow up."
+    },
+    "manageStats": {
+      "title": "Manage statistics",
+      "description": "Access menu analytics and diner behaviour."
+    },
+    "manageNotifications": {
+      "title": "Manage notifications",
+      "description": "Get notified by customers and answer their questions quickly."
+    }
+  },
+  "MenuTypesDesktop": {
+    "title": "Unique menus tailored to your restaurant",
+    "subtitle": "Deliver memorable dining experiences with our three digital menu formats.",
+    "body": "From a streamlined text menu for day one to immersive layouts with photo and video that boost upsells."
+  },
+  "MenuTypesSlider": {
+    "title": "Unique menus tailored to your restaurant",
+    "subtitle": "Deliver memorable dining experiences with our three digital menu formats.",
+    "basicTitle": "Plain menu",
+    "basicDesc": "Text-forward by default—you can mix in photos or videos when you choose.",
+    "videoTitle": "Video menu",
+    "videoDesc": "Show dishes in motion so guests see preparation and plating.",
+    "imageTitle": "Photo menu",
+    "imageDesc": "High-impact photography that makes every dish irresistible.",
+    "threeTypesTitle": "Three menu styles for every need",
+    "threeTypesBody": "Start simple or go immersive with visuals that captivate diners and lift average spend."
+  },
+  "Pricing": {
+    "eyebrow": "Pricing",
+    "title": "Choose the perfect plan for your restaurant",
+    "subtitle": "Affordable packs with the essentials to attract diners, encourage repeat visits and grow revenue.",
+    "tierName": "Basic",
+    "promoHeading": "Free until 2027!",
+    "noCommitment": "No commitment",
+    "later": "Then",
+    "perMonth": "/month",
+    "description": "6 months free with no obligation; afterward only €15.99 per month.",
+    "requestInfo": "Ask for details",
+    "features": [
+      "Unlimited dishes",
+      "Core allergen filters",
+      "Dish categories",
+      "Dedicated support",
+      "Custom QR with your logo",
+      "Basic usage insights",
+      "Dish management"
+    ]
+  },
+  "Contact": {
+    "heading": "Contact us",
+    "subtitle": "Ready to level up with a QR digital menu? We’ll help you roll out the best setup for your venue.",
+    "placeholders": {
+      "name": "First name",
+      "surname": "Last name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "toastOk": "Message sent successfully",
+    "toastErr": "Could not send the message",
+    "validation": {
+      "name": "First name is required",
+      "surname": "Last name is required",
+      "emailInvalid": "Enter a valid email address",
+      "emailRequired": "Enter a valid email address",
+      "message": "Message is required",
+      "subject": "Subject is required"
+    }
+  },
+  "Faqs": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "question": "What is MenuVision?",
+        "answer": "MenuVision is a digital platform that lets restaurants present their menu in an interactive, modern way on any device—via a simple QR code."
+      },
+      {
+        "question": "How do I update my menu?",
+        "answer": "Update everything in real time from the back office. Changes appear instantly on every guest device—no reprints."
+      },
+      {
+        "question": "Do guests need an app?",
+        "answer": "No. Diners scan the QR with their phone camera to open the digital menu. No downloads required."
+      },
+      {
+        "question": "Can I highlight recommended dishes or allergens?",
+        "answer": "Yes. Flag chef recommendations and list allergens and dietary notes so guests can filter with confidence."
+      },
+      {
+        "question": "Why choose it over a printed menu?",
+        "answer": "It’s more hygienic, always current, supports rich media, and improves the experience with filters and recommendations."
+      },
+      {
+        "question": "How do I sign up for MenuVision?",
+        "answer": "Reach out through the website form or email and we’ll help you launch a tailored digital menu fast."
+      }
+    ]
+  },
+  "Team": {
+    "title": "Our team",
+    "intro": "Meet the people behind the product—focused builders shipping reliable, modern hospitality tools. A few of the core members:",
+    "pablo": {
+      "role": "Software engineer",
+      "desc": "Deep experience building robust, scalable applications."
+    },
+    "alvaro": {
+      "role": "Web developer",
+      "desc": "Interfaces and web experiences with a strong product mindset."
+    }
+  },
+  "StructuredData": {
+    "websiteAbout": "Digital menu and QR menu software for restaurants",
+    "softwareOfferDesc": "Basic monthly plan after the promotional period; includes free trial months per current terms.",
+    "priceNote": "19.99"
+  },
+  "WhatsAppFloat": {
+    "ariaLabel": "Open a WhatsApp chat with MenuVision"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "heading": "Something went wrong",
+    "description": "We couldn’t find that page. Head back to the homepage with the button below.",
+    "home": "Back to home"
+  },
+  "Common": {
+    "priceMonthly": "€15.99"
+  },
+  "ThemeToggle": {
+    "ariaToLight": "Switch to light mode",
+    "ariaToDark": "Switch to dark mode"
+  }
+}

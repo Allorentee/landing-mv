@@ -1,10 +1,24 @@
-import { faqs } from "@/data/faqs";
+import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { absoluteUrl, siteConfig, siteUrl } from "@/lib/site";
 
-const organizationId = `${siteUrl}#organization`;
-const websiteId = `${siteUrl}#website`;
+type FAQItem = { question: string; answer: string };
 
-export function StructuredData() {
+export async function StructuredData() {
+  const locale = await getLocale();
+  const messages = await getMessages();
+  const tSd = await getTranslations("StructuredData");
+  const tMeta = await getTranslations("Meta");
+
+  const faqItems =
+    (messages.Faqs as { items?: FAQItem[] }).items ?? ([] as FAQItem[]);
+
+  const langTag = locale === "en" ? "en-US" : "es-ES";
+
+  const organizationId = `${siteUrl}#organization`;
+  const websiteId = `${siteUrl}#website`;
+
+  const canonical = locale === "en" ? `${siteUrl}/en` : siteUrl;
+
   const organization = {
     "@type": "Organization",
     "@id": organizationId,
@@ -20,31 +34,31 @@ export function StructuredData() {
   const website = {
     "@type": "WebSite",
     "@id": websiteId,
-    url: siteUrl,
+    url: canonical,
     name: siteConfig.name,
-    description: siteConfig.description,
-    inLanguage: "es-ES",
+    description: tMeta("description"),
+    inLanguage: langTag,
     publisher: { "@id": organizationId },
     about: {
       "@type": "Thing",
-      name: "Software de carta digital y menú QR para restaurantes",
+      name: tSd("websiteAbout"),
     },
   };
 
   const homePage = {
     "@type": ["WebPage", "FAQPage"],
-    "@id": `${siteUrl}/#webpage`,
-    url: siteUrl,
-    name: siteConfig.title,
-    description: siteConfig.description,
+    "@id": `${canonical}#webpage`,
+    url: canonical,
+    name: tMeta("title"),
+    description: tMeta("description"),
     isPartOf: { "@id": websiteId },
     about: { "@id": organizationId },
     primaryImageOfPage: {
       "@type": "ImageObject",
       url: absoluteUrl("/preview/poster.png"),
     },
-    inLanguage: "es-ES",
-    mainEntity: faqs.map((faq) => ({
+    inLanguage: langTag,
+    mainEntity: faqItems.map((faq: FAQItem) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -62,14 +76,13 @@ export function StructuredData() {
     offers: {
       "@type": "Offer",
       priceCurrency: "EUR",
-      price: "19.99",
-      description:
-        "Plan Básico mensual tras periodo promocional; incluye meses gratis de prueba según condiciones vigentes.",
-      url: `${siteUrl}/#pricing`,
+      price: tSd("priceNote"),
+      description: tSd("softwareOfferDesc"),
+      url: `${canonical}/#pricing`,
     },
-    description: siteConfig.description,
+    description: tMeta("description"),
     screenshot: absoluteUrl("/preview/poster.png"),
-    url: siteUrl,
+    url: canonical,
     provider: { "@id": organizationId },
   };
 

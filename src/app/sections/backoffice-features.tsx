@@ -8,53 +8,26 @@ import { Container } from "@/components/container/container";
 import Shadow from "@/components/shadow/shadow";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Typography } from "@/components/typography/typography";
+import { useTranslations } from "next-intl";
 
-type Feature = {
-  id: string;
-  title: string;
-  description: string;
+type FeatureCard = {
+  id:
+    | "manageMenu"
+    | "manageVideos"
+    | "manageComments"
+    | "manageSuggestions"
+    | "manageStats"
+    | "manageNotifications";
   icon: React.ElementType;
 };
 
-const BACKOFFICE_FEATURES: Feature[] = [
-  {
-    id: "gestionar-carta",
-    title: "Gestionar la carta",
-    description:
-      "Modifique precios, unidades, alérgenos, disponibilidad, sugerencias del chef y muchas más opciones",
-    icon: Lock,
-  },
-  {
-    id: "gestionar-videos",
-    title: "Gestionar los videos",
-    description:
-      "Modifique los videos de los platos para que sean más atractivos",
-    icon: Lock,
-  },
-  {
-    id: "gestionar-comentarios",
-    title: "Gestionar los comentarios",
-    description: "Lea los comentarios de los clientes y responda a sus dudas",
-    icon: ClockArrowUp,
-  },
-  {
-    id: "gestionar-sugerencias",
-    title: "Gestionar las sugerencias",
-    description: "Lea las sugerencias de los clientes y responda a sus dudas",
-    icon: Sparkles,
-  },
-  {
-    id: "gestionar-estadisticas",
-    title: "Gestionar las estadísticas",
-    description: "Acceda a las estadísticas de la carta y de los clientes",
-    icon: Cog,
-  },
-  {
-    id: "gestionar-notificaciones",
-    title: "Gestionar las notificaciones",
-    description: "Reciba notificaciones de los clientes y responda a sus dudas",
-    icon: ShoppingCart,
-  },
+const FEATURE_CARDS: FeatureCard[] = [
+  { id: "manageMenu", icon: Lock },
+  { id: "manageVideos", icon: Lock },
+  { id: "manageComments", icon: ClockArrowUp },
+  { id: "manageSuggestions", icon: Sparkles },
+  { id: "manageStats", icon: Cog },
+  { id: "manageNotifications", icon: ShoppingCart },
 ];
 
 interface BackofficeFeatureCardProps {
@@ -64,6 +37,7 @@ interface BackofficeFeatureCardProps {
 }
 
 const BackofficeFeaturesSection: React.FC = () => {
+  const t = useTranslations("BackofficeFeatures");
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const [showVideo, setShowVideo] = useState(false);
 
@@ -74,18 +48,15 @@ const BackofficeFeaturesSection: React.FC = () => {
           as="h2"
           className="text-base/7 font-semibold text-primary-400"
         >
-          Todo lo que necesitas para gestionar tu carta
+          {t("eyebrow")}
         </Typography>
         <Typography
           as="h3"
           className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl sm:text-balance"
         >
-          Un panel de gestión para actualizar la carta en tiempo real
+          {t("title")}
         </Typography>
-        <Typography className="text-lg/8 muted">
-          Modifique precios, unidades, alérgenos, disponibilidad, sugerencias
-          del chef y muchas más opciones desde un solo lugar y en tiempo real
-        </Typography>
+        <Typography className="text-lg/8 muted">{t("subtitle")}</Typography>
       </div>
       <RotateCard height={isDesktop ? 800 : 460}>
         {showVideo ? (
@@ -110,6 +81,14 @@ const BackofficeFeaturesSection: React.FC = () => {
           <div
             className="relative group cursor-pointer"
             onClick={() => setShowVideo(true)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setShowVideo(true);
+              }
+            }}
+            role="button"
+            tabIndex={0}
           >
             <Image
               src="/images/backoffice-dark.webp"
@@ -120,7 +99,7 @@ const BackofficeFeaturesSection: React.FC = () => {
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
               <Typography as="h1" className="text-white text-2xl font-bold">
-                Visualizar demo
+                {t("playDemo")}
               </Typography>
             </div>
           </div>
@@ -129,11 +108,11 @@ const BackofficeFeaturesSection: React.FC = () => {
 
       <dl className="mx-auto grid grid-cols-1 gap-x-4 gap-y-4 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-8 w-full">
         <Shadow />
-        {BACKOFFICE_FEATURES.map((feature) => (
+        {FEATURE_CARDS.map((feature) => (
           <BackofficeFeatureCard
             key={feature.id}
-            title={feature.title}
-            description={feature.description}
+            title={t(`${feature.id}.title`)}
+            description={t(`${feature.id}.description`)}
             icon={feature.icon}
           />
         ))}

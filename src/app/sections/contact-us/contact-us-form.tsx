@@ -1,24 +1,44 @@
 "use client";
 
 import { usePostTicket } from "@/api/use-post-ticket";
-import { validations } from "./validations";
+import { makeContactValidationSchema } from "./validations";
 import { Formik } from "formik";
 import { toast } from "react-hot-toast";
 import ContactUsInfo from "./contact-us-info";
+import { useLocale, useTranslations } from "next-intl";
+import { useMemo } from "react";
 
 export default function ContactUsForm() {
   const { postTicket, isLoading } = usePostTicket();
+  const t = useTranslations("Contact");
+  const tv = useTranslations("Contact.validation");
+  const locale = useLocale();
 
-  const handleSubmit = async (values: any, resetForm: () => void) => {
+  const validationSchema = useMemo(
+    () =>
+      makeContactValidationSchema({
+        name: tv("name"),
+        surname: tv("surname"),
+        emailInvalid: tv("emailInvalid"),
+        emailRequired: tv("emailRequired"),
+        message: tv("message"),
+        subject: tv("subject"),
+      }),
+    [locale, tv],
+  );
+
+  const handleSubmit = async (values: Record<string, string>, resetForm: () => void) => {
     await postTicket(values)
       .then(() => {
-        toast.success("Ticket enviado correctamente");
+        toast.success(t("toastOk"));
         resetForm();
 
-        // 👇 Reemplaza el gtag anterior por esto
         if (typeof window !== "undefined") {
-          (window as any).dataLayer = (window as any).dataLayer || [];
-          (window as any).dataLayer.push({
+          const win = window as unknown as {
+            dataLayer?: unknown[];
+          };
+          win.dataLayer = win.dataLayer || [];
+          win.dataLayer.push({
             event: "formulario_contacto_enviado",
             event_category: "contacto",
             event_label: "landing",
@@ -26,7 +46,7 @@ export default function ContactUsForm() {
         }
       })
       .catch(() => {
-        toast.error("Error al enviar el ticket");
+        toast.error(t("toastErr"));
       });
   };
 
@@ -44,7 +64,7 @@ export default function ContactUsForm() {
       validateOnBlur={false}
       validateOnMount={false}
       onSubmit={(values, { resetForm }) => handleSubmit(values, resetForm)}
-      validationSchema={validations}
+      validationSchema={validationSchema}
     >
       {({ values, handleChange, errors, handleSubmit }) => {
         return (
@@ -55,7 +75,7 @@ export default function ContactUsForm() {
                   id="name"
                   name="name"
                   type="text"
-                  placeholder="Nombre"
+                  placeholder={t("placeholders.name")}
                   value={values.name}
                   data-invalid={errors.name ? "true" : undefined}
                   autoComplete="given-name"
@@ -71,7 +91,7 @@ export default function ContactUsForm() {
                   id="surname"
                   name="surname"
                   type="text"
-                  placeholder="Apellidos"
+                  placeholder={t("placeholders.surname")}
                   value={values.surname}
                   data-invalid={errors.surname ? "true" : undefined}
                   autoComplete="family-name"
@@ -90,7 +110,7 @@ export default function ContactUsForm() {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="Correo electrónico"
+                    placeholder={t("placeholders.email")}
                     value={values.email}
                     data-invalid={errors.email ? "true" : undefined}
                     autoComplete="email"
@@ -110,7 +130,7 @@ export default function ContactUsForm() {
                     name="subject"
                     data-invalid={errors.subject ? "true" : undefined}
                     className="block w-full rounded-md data-invalid:outline-red-500 bg-white dark:bg-white/90  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
-                    placeholder="Asunto"
+                    placeholder={t("placeholders.subject")}
                     value={values.subject}
                     onChange={handleChange}
                   />
@@ -130,7 +150,7 @@ export default function ContactUsForm() {
                     rows={4}
                     data-invalid={errors.message ? "true" : undefined}
                     className="block w-full rounded-md data-invalid:outline-red-500 bg-white dark:bg-white/90  px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
-                    placeholder="Mensaje"
+                    placeholder={t("placeholders.message")}
                     value={values.message}
                     onChange={handleChange}
                   />
@@ -150,7 +170,7 @@ export default function ContactUsForm() {
                 disabled={isLoading}
                 className="rounded-md cursor-pointer disabled:cursor-not-allowed bg-primary-dark px-8 py-2.5 text-center text-sm! font-semibold text-white shadow-xs hover:bg-primary hover:text-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
-                {isLoading ? "Enviando..." : "Enviar mensaje"}
+                {isLoading ? t("submitting") : t("submit")}
               </button>
             </div>
           </div>

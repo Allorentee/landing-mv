@@ -3,28 +3,8 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import { Typography } from "@/components/typography/typography";
 import Shadow from "@/components/shadow/shadow";
-
-const tiers = [
-  {
-    name: "Básico",
-    id: "tier-basico",
-    href: "#contact-us",
-    priceMonthly: "15,99€",
-    promoHeading: "¡Hasta 2027 gratuito!",
-    free: true,
-    description: "6 meses gratis sin compromiso; después, solo 15,99 € al mes.",
-    features: [
-      "Platos ilimitados",
-      "Filtros de alérgenos básicos",
-      "Categorías de platos",
-      "Soporte personalizado",
-      "QR personalizable con logo",
-      "Estadísticas básicas de uso",
-      "Gestión de platos",
-    ],
-    featured: false,
-  },
-];
+import { useLocale, useTranslations } from "next-intl";
+import { useMemo } from "react";
 
 /** Destaca «6 meses» frente al resto cuando el formato es español ¡… gratis! */
 function PromoHeadingRich({
@@ -34,20 +14,31 @@ function PromoHeadingRich({
   heading: string;
   featured: boolean;
 }) {
-  const match = /^¡(.+?)\s+(gratis!?)$/iu.exec(heading.trim());
+  const locale = useLocale();
+
+  const match =
+    locale === "es"
+      ? /^¡(.+?)\s+(gratis!?)$/iu.exec(heading.trim())
+      : null;
+
+  const plainClass =
+    "text-6xl font-black tracking-tighter sm:text-7xl lg:text-8xl";
+
   if (!match) {
     return (
       <span
         className={clsx(
           featured ? "text-primary" : "text-secondary-dark",
-          "text-6xl font-black tracking-tighter sm:text-7xl lg:text-8xl",
+          plainClass,
         )}
       >
         {heading}
       </span>
     );
   }
+
   const [, lead, gratis] = match;
+
   return (
     <span className="inline-flex flex-wrap items-baseline justify-center gap-x-1.5 gap-y-1 text-balance">
       <span
@@ -63,7 +54,7 @@ function PromoHeadingRich({
           featured
             ? "text-primary drop-shadow-[0_1px_14px_color-mix(in_srgb,var(--color-primary)_28%,transparent)]"
             : "text-secondary-dark drop-shadow-[0_1px_12px_color-mix(in_srgb,var(--color-secondary)_18%,transparent)]",
-          "text-6xl font-black tracking-tighter sm:text-7xl lg:text-8xl",
+          plainClass,
         )}
       >
         {lead}
@@ -81,6 +72,26 @@ function PromoHeadingRich({
 }
 
 export default function PricingSection() {
+  const locale = useLocale();
+  const t = useTranslations("Pricing");
+  const tCommon = useTranslations("Common");
+
+  const tiers = useMemo(
+    () => [
+      {
+        name: t("tierName"),
+        id: "tier-basico",
+        href: "#contact-us",
+        priceMonthly: tCommon("priceMonthly"),
+        promoHeading: t("promoHeading"),
+        description: t("description"),
+        features: t.raw("features") as string[],
+        featured: false,
+      },
+    ],
+    [locale, t, tCommon],
+  );
+
   return (
     <div
       id="pricing"
@@ -89,21 +100,19 @@ export default function PricingSection() {
       <Shadow />
       <div className="mx-auto max-w-4xl text-center flex flex-col gap-4">
         <Typography as="h2" className="text-base/7 font-semibold text-primary">
-          Precios
+          {t("eyebrow")}
         </Typography>
         <Typography
           as="h3"
           className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl"
         >
-          Elige el plan perfecto para tu restaurante
+          {t("title")}
         </Typography>
         <Typography
           as="p"
           className="mx-auto max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8"
         >
-          Elige un plan económico que incluya las mejores características para
-          atraer a tu público, crear lealtad de tus clientes y aumentar tus
-          ventas.
+          {t("subtitle")}
         </Typography>
       </div>
       <div className="grid place-content-center">
@@ -155,7 +164,7 @@ export default function PricingSection() {
                         "relative z-10 mt-3 text-xs font-semibold uppercase tracking-[0.18em] sm:text-sm",
                       )}
                     >
-                      Sin compromiso
+                      {t("noCommitment")}
                     </p>
                   </div>
                   <p
@@ -164,7 +173,7 @@ export default function PricingSection() {
                       "flex flex-wrap items-baseline justify-center gap-x-1.5 gap-y-1 text-lg sm:justify-start",
                     )}
                   >
-                    <span className="font-semibold">Luego</span>
+                    <span className="font-semibold">{t("later")}</span>
                     <span
                       className={clsx(
                         tier.featured ? "text-white" : "text-gray-900",
@@ -179,7 +188,7 @@ export default function PricingSection() {
                         "text-lg font-semibold sm:text-xl",
                       )}
                     >
-                      /mes
+                      {t("perMonth")}
                     </span>
                   </p>
                 </>
@@ -199,7 +208,7 @@ export default function PricingSection() {
                       "text-base",
                     )}
                   >
-                    /mes
+                    {t("perMonth")}
                   </span>
                 </>
               )}
@@ -244,7 +253,7 @@ export default function PricingSection() {
                 "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10",
               )}
             >
-              Solicitar información
+              {t("requestInfo")}
             </a>
           </div>
         ))}
