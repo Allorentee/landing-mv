@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Background from "@/components/background/background";
 import { StructuredData } from "@/components/seo/structured-data";
@@ -17,6 +17,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-display",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["700", "800"],
 });
 
 const ogImage = {
@@ -109,7 +116,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-dvh mx-auto w-full`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} antialiased relative min-h-dvh mx-auto w-full`}
       >
         <StructuredData />
         <ThemeProvider>

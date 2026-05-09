@@ -14,6 +14,14 @@ export default function ContactUsForm() {
       .then(() => {
         toast.success("Ticket enviado correctamente");
         resetForm();
+
+        // 👇 Añade esto
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "formulario_contacto_enviado", {
+            event_category: "contacto",
+            event_label: "landing",
+          });
+        }
       })
       .catch(() => {
         toast.error("Error al enviar el ticket");

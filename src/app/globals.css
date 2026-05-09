@@ -17,6 +17,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
 
   --color-primary: #fcd9b8;
   --color-secondary: #e09145;
@@ -424,4 +425,27 @@ span {
   100% {
     transform: translateX(150%);
   }
+}
+
+@keyframes pricing-promo-sheen {
+  0% {
+    opacity: 0;
+    transform: translateX(-30%) skewX(-12deg);
+  }
+  35% {
+    opacity: 0.55;
+  }
+  55% {
+    opacity: 0.42;
+    transform: translateX(260%) skewX(-12deg);
+  }
+  56%,
+  100% {
+    opacity: 0;
+    transform: translateX(260%) skewX(-12deg);
+  }
+}
+
+.pricing-promo-sheen {
+  animation: pricing-promo-sheen 4s cubic-bezier(0.45, 0, 0.2, 1) infinite;
 }
