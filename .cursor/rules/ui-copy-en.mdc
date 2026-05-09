@@ -1,0 +1,11 @@
+---
+description: Todo el texto de producto/UI nuevo se escribe en inglés como fuente para i18n
+alwaysApply: true
+---
+
+# Idioma de los textos (UI y copia)
+
+- **Copia visible**: labels, placeholders, mensajes toast, textos aria, títulos, botones y cualquier texto de usuario nuevo debe estar **primero en inglés**.
+- **`next-intl`**: nuevas entradas en `src/messages/en.json`; la traducción al español va en **`src/messages/es.json`** (misma estructura de claves que en inglés). No inventar español únicamente sin la pareja en inglés.
+- **`src/app`/componentes**: no hardcodees cadenas en español nuevas si el resto usa `useTranslations` / `getTranslations`; usa los JSON de mensajes.
+- **Comentarios y nombres en código**: en inglés, alineados con el resto del repo.
