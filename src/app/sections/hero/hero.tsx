@@ -4,6 +4,7 @@ import Shadow from "@/components/shadow/shadow";
 import Video from "@/components/video/video";
 import { Typography } from "@/components/typography/typography";
 import clsx from "clsx";
+import { Mail } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -18,7 +19,7 @@ export default function HeroSection() {
         // Flexbox
         "flex md:flex-row flex-col justify-center items-center",
         // Scroll margin top
-        "scroll-mt-[100px]"
+        "scroll-mt-[100px]",
       )}
     >
       <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto flex-2 flex flex-col gap-6 md:gap-10">
@@ -28,6 +29,7 @@ export default function HeroSection() {
         >
           La carta digital que transforma tu restaurante
         </Typography>
+
         <Typography
           as="p"
           className="text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 text-center md:text-left"
@@ -43,12 +45,15 @@ export default function HeroSection() {
           >
             ¡Empezar ahora!
           </Link>
+          <Link href="#contact-us" className="hero-contact-badge">
+            <Mail size={16} aria-hidden="true" />
+            <span>¡Solicita tu demo!</span>
+          </Link>
           <Link
             target="_blank"
             href={`https://qr.menuvision.es/${process.env.NEXT_PUBLIC_DEMO_QR}`}
-            className="hero-cta-secondary"
           >
-            Probar DEMO <span aria-hidden="true">→</span>
+            Carta de ejemplo <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
