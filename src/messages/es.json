@@ -36,6 +36,11 @@
   "Footer": {
     "rights": "© {year} MenuVision. Todos los derechos reservados."
   },
+  "Banner": {
+    "title": "Promoción gratis ¡todo 2026!",
+    "cta": "Solicita información",
+    "dismissSr": "Cerrar"
+  },
   "Hero": {
     "title": "La carta digital que transforma tu restaurante",
     "subtitle": "Tus platos, siempre actualizados, accesibles al instante y con filtros inteligentes para alergias y preferencias.",

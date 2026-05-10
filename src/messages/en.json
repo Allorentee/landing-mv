@@ -33,6 +33,11 @@
   "Footer": {
     "rights": "© {year} MenuVision. All rights reserved."
   },
+  "Banner": {
+    "title": "Free promo all 2026!",
+    "cta": "Request info",
+    "dismissSr": "Dismiss"
+  },
   "Hero": {
     "title": "The digital menu that transforms your restaurant",
     "subtitle": "Your dishes, always up to date, instantly accessible—with smart filters for allergies and dietary preferences.",

@@ -7,10 +7,12 @@ import FaqsSection from "../sections/faqs";
 import TeamSection from "../sections/team/team";
 import Footer from "../sections/footer";
 import MenuTypes from "../sections/menu-types/menu-types";
+import Banner from "@/components/banner/banner";
 
 export default function Home() {
   return (
     <>
+      <Banner />
       <Header />
       <main id="main-content">
         <HeroSection />
